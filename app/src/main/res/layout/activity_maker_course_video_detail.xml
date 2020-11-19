@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/small_video_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <cn.jzvd.JzvdStd
+            android:id="@+id/videoplayer"
+            android:layout_width="match_parent"
+            android:layout_height="432pt" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:layout_constraintStart_toStartOf="parent"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/color_333333"
+            android:layout_marginTop="@dimen/dp17"
+            android:layout_marginStart="@dimen/dp10"
+            tools:text="幼儿园招生如何吸引家长？"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_time_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintTop_toBottomOf="@+id/tv_name"
+            android:textSize="12sp"
+            android:paddingBottom="@dimen/dp13"
+            android:textColor="@color/color_999999"
+            android:layout_marginTop="@dimen/dp14"
+            android:layout_marginStart="@dimen/dp10"
+            tools:text="2020-08-10  |  主讲人：招生工作"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/play_m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/details_m_play"
+            android:layout_marginEnd="20dp"
+            custom:layout_constraintEnd_toEndOf="parent"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:layout_constraintBottom_toBottomOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_marginTop="16pt"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@color/white"
+                android:scaleType="fitXY" />
+
+            <com.github.lzyzsd.circleprogress.CircleProgress
+                android:id="@+id/circle_progress"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                custom:circle_max="100"
+                custom:circle_progress="0" />
+
+            <io.rong.subscaleview.SubsamplingScaleImageView
+                android:id="@+id/webContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 />
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

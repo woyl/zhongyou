@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/title_forum_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/my_px_300"
+        android:background="@drawable/bg_gradient_vertical_color">
+
+        <ImageView
+            android:id="@+id/title_forum_back"
+            style="@style/Widget.AppCompat.ActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:scaleType="center"
+            android:src="@drawable/select_back_btn"
+            android:text="保存"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/textview1"
+            app:layout_constraintTop_toTopOf="@+id/textview1" />
+
+        <TextView
+            android:id="@+id/textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/my_px_200"
+            android:text="讨论区"
+            android:textColor="@color/white"
+            android:textSize="@dimen/my_sp_52"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout_forum"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/my_px_141"
+        app:layout_constraintTop_toTopOf="@+id/title_forum_layout">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/cordinatorLayout_forum"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout_forum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:background="@color/color_00FFFFFF"
+                app:elevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar_forum"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/my_px_158"
+                    app:layout_scrollFlags="scroll|snap">
+
+                    <FrameLayout
+                        android:id="@+id/fl_forum_searchText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/my_px_35"
+                        android:layout_marginRight="@dimen/my_px_35"
+                        android:layout_marginBottom="@dimen/my_px_43"
+                        android:background="@drawable/bg_meeting_search_edittext">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/my_px_115"
+                            android:layout_gravity="center"
+                            android:drawableLeft="@drawable/ic_search"
+                            android:drawablePadding="3dp"
+                            android:gravity="center"
+                            android:hint="请输入关键字搜索教室"
+                            android:textColorHint="@color/white"
+                            android:textSize="14sp" />
+                    </FrameLayout>
+
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_forum"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="@color/white"
+                android:cacheColorHint="@null"
+                android:scrollbars="none"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appBarLayout_forum" />
+
+            <TextView
+                android:id="@+id/tv_forum_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:drawableTop="@drawable/ic_home_record_none"
+                android:drawablePadding="8dp"
+                android:gravity="center_horizontal"
+                android:text="暂时安排"
+                android:textColor="@color/c_909090"
+                android:textSize="15sp"
+                android:visibility="gone" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

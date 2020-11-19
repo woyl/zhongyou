@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_base_title_tool_bar" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/acountSetting"
+        android:layout_width="wrap_content"
+        android:layout_height="120pt"
+        android:layout_marginTop="16pt"
+        android:paddingRight="24pt"
+        app:sBackgroundDrawableRes="@android:color/white"
+        app:sDividerLineColor="#ccc"
+        app:sDividerLineType="bottom"
+        app:sLeftTextColor="@color/color_333333"
+        app:sLeftTextSize="14sp"
+        app:sBottomDividerLineMarginLR="@dimen/dp8"
+        app:sLeftTextString="@string/user_account"
+        app:sRightIconRes="@mipmap/my_right" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/meetingSetting"
+        android:layout_width="wrap_content"
+        android:layout_height="120pt"
+        android:paddingRight="24pt"
+        app:sDividerLineColor="#ccc"
+        app:sBackgroundDrawableRes="@android:color/white"
+        app:sLeftTextColor="@android:color/black"
+        app:sBottomDividerLineMarginLR="@dimen/dp8"
+        app:sLeftTextSize="14sp"
+        app:sLeftTextString="@string/meetingSetting"
+        app:sRightIconRes="@mipmap/my_right" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/aboutUs"
+        android:layout_width="wrap_content"
+        android:layout_height="120pt"
+        android:paddingRight="24pt"
+        app:sBottomDividerLineMarginLR="@dimen/dp8"
+        app:sBackgroundDrawableRes="@android:color/white"
+        app:sDividerLineColor="#ccc"
+        app:sDividerLineType="bottom"
+        app:sLeftTextColor="@color/color_333333"
+        app:sLeftTextSize="14sp"
+        app:sLeftTextString="@string/aboutus"
+        app:sRightIconRes="@mipmap/my_right" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/contactUs"
+        android:layout_width="wrap_content"
+        android:layout_height="120pt"
+        android:paddingRight="24pt"
+        app:sBackgroundDrawableRes="@android:color/white"
+        app:sBottomDividerLineMarginLR="@dimen/dp8"
+        app:sDividerLineColor="#ccc"
+        app:sLeftTextColor="@color/color_333333"
+        app:sLeftTextSize="14sp"
+        app:sLeftTextString="@string/countus"
+        app:sRightIconRes="@mipmap/my_right" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/checkUpDate"
+        android:layout_width="wrap_content"
+        android:layout_height="120pt"
+        android:paddingRight="24pt"
+        app:sDividerLineColor="#ccc"
+        app:sBackgroundDrawableRes="@android:color/white"
+        app:sBottomDividerLineMarginLR="@dimen/dp8"
+        app:sLeftTextColor="@color/color_333333"
+        app:sLeftTextSize="14sp"
+        app:sLeftTextString="@string/checkUpdate"
+        app:sRightIconRes="@mipmap/my_right"
+        app:sRightTextSize="15sp"
+        app:sRightTextColor="@color/color_666666"
+        app:sRightTextString="" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/clearCache"
+        android:layout_width="wrap_content"
+        android:layout_height="120pt"
+        android:paddingRight="24pt"
+        app:sBackgroundDrawableRes="@android:color/white"
+        app:sDividerLineColor="#66eeeeee"
+        app:sDividerLineType="both"
+        app:sLeftTextColor="@color/color_333333"
+        app:sLeftTextSize="14sp"
+        app:sLeftTextString="清理缓存"
+        app:sRightIconRes="@mipmap/my_right"
+        app:sRightTextSize="15sp"
+        app:sRightTextColor="@color/color_666666"
+        app:sRightTextString="" />
+
+    <com.allen.library.SuperButton
+        android:id="@+id/loginOut"
+        android:layout_width="match_parent"
+        android:layout_height="82pt"
+        android:text="@string/login_out"
+        android:layout_marginTop="@dimen/dp30"
+        android:layout_marginStart="@dimen/dp10"
+        android:layout_marginEnd="@dimen/dp10"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:sCornersRadius="5dp"
+        app:sSelectorNormalColor="@color/c3A8CE8"
+        app:sSelectorPressedColor="@color/c_172938"
+        app:sSolidColor="@color/c3A8CE8"
+        app:sUseSelector="true" />
+
+</LinearLayout>

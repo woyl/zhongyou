@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="624pt"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_item_background"
+        android:orientation="vertical"
+        android:paddingBottom="31pt">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="80pt"
+            android:gravity="center"
+            android:text="打卡评分"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ccc" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="100pt" />
+
+        <EditText
+            android:id="@+id/writeWorldsEd"
+            android:layout_width="match_parent"
+            android:layout_height="128pt"
+            android:layout_marginLeft="45pt"
+            android:layout_marginTop="20pt"
+            android:layout_marginRight="45pt"
+            android:background="@drawable/input_meeting_name"
+            android:gravity="top"
+            android:hint="请给予我们评价"
+            android:padding="16pt"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <com.allen.library.SuperButton
+            android:id="@+id/commitButton"
+            android:layout_width="match_parent"
+            android:layout_height="78pt"
+            android:layout_marginLeft="45pt"
+            android:layout_marginTop="20pt"
+            android:layout_marginRight="45pt"
+            android:text="提交"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:sCornersRadius="10dp"
+            app:sSelectorNormalColor="@color/agora_blue"
+            app:sUseSelector="true" />
+    </LinearLayout>
+</LinearLayout>

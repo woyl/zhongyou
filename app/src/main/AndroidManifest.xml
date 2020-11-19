@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.zhongyou.meet.mobile">
+
+    <supports-screens
+        android:anyDensity="true"
+        android:xlargeScreens="true" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+
+    <uses-permission android:name="com.zhongyou.meet.mobile.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="com.yunos.tv.alitvasr.permission.SERVICE_LISTEN" />
+    <uses-permission android:name="com.yunos.tv.alitvasr.permission.CONTROL" />
+    <uses-permission android:name="android.permission.RECORD_VIDEO" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name=" com.huawei.android.launcher.permission.CHANGE_BADGE"/>
+    <uses-permission android:name="com.vivo.notification.permission.BADGE_ICON" />
+
+    <application
+        android:name=".BaseApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher_logo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:resizeableActivity="true"
+        android:maxAspectRatio="2.4"
+        tools:ignore="LockedOrientationActivity">
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.4" />
+        <!--适配华为（huawei）刘海屏-->
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true"/>
+        <!--适配小米（xiaomi）刘海屏-->
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" />
+        <activity android:name=".mvp.ui.activity.ClassRoomActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".mvp.ui.activity.MyClassRoomActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".mvp.ui.activity.MyCourseActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".mvp.ui.activity.MoreDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.ui.activity.AboutAgreementActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".LauncherActivity">
+            <intent-filter>
+
+                <!-- 此处修改 需要修改arms中baseActivity中的Intent跳转 -->
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".mvp.ui.activity.NewMakerDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".base.DemoActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".mvp.ui.activity.ChairManWithKotlinActivity" />
+        <activity
+            android:name=".mvp.ui.activity.AboutUsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.ui.activity.ContactUsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.ui.activity.MakerCourseMeetDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.ui.activity.MakerCourseAudioDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.ui.activity.MakerCourseAudioActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.ui.activity.MakerCourseVideoDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.ui.activity.MakerDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.ui.activity.MessageDetailActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="com.zhongyou.meet.mobile.mvp.ui.activity.MessageDetailActivity" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".mvp.ui.activity.MessageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.ui.activity.MeetingSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.ui.activity.AccountSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.ui.activity.SystemSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.ui.activity.IndexActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitle"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="com.hezy.guide.phone"
+                    android:path="/meeting"
+                    android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".IM.ConversionListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="com.zhongyou.meet.mobile"
+                    android:pathPrefix="/conversationlist"
+                    android:scheme="rong" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".IM.IMChatActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="com.zhongyou.meet.mobile"
+                    android:pathPrefix="/conversation/"
+                    android:scheme="rong" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".IM.SealNotificationReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="io.rong.push.intent.MESSAGE_ARRIVED" />
+                <action android:name="io.rong.push.intent.MESSAGE_CLICKED" />
+                <action android:name="io.rong.push.intent.THIRD_PARTY_PUSH_STATE" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".IM.SubConversationListActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="com.zhongyou.meet.mobile"
+                    android:path="/subconversationlist"
+                    android:scheme="rong" />
+            </intent-filter>
+        </activity> <!-- <meta-data -->
+        <!-- android:name="RONG_CLOUD_APP_KEY" -->
+        <!-- android:value="8luwapkv846rl" /> -->
+        <!-- 如果只使用副单位 (pt、in、mm) 就可以直接以像素作为单位填写设计图的尺寸, 不需再把像素转化为 dp -->
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="750" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="1334" />
+        <meta-data
+            android:name="com.zhongyou.meet.mobile.config.GlobalConfiguration"
+            android:value="ConfigModule" />
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="ead2f178e34f801f0df3c4f2c9b60e54" />
+
+        <service android:name="com.amap.api.location.APSService" />
+
+        <activity
+            android:name=".ameeting.ChairManActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/NoTitleLandscape" />
+        <activity
+            android:name=".ameeting.MakerChairManActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/NoTitleLandscape" />
+        <activity
+            android:name=".WebViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.EvaluationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.VersionActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".UserInfoActivity" /> <!-- 微信登录页面 更改了启动模式 导致回到后台点击图标重新运行了 app 需要更改接口调用顺序 特别是首页 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.zhongyou.meet.mobile"
+            android:theme="@style/translucentTheme">
+            <intent-filter>
+
+                <!-- 此处修改 需要修改arms中baseActivity中的Intent跳转 -->
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="com.zhongyou.meeting.mobile.wxentryactivity" />
+            </intent-filter>
+        </activity> <!-- 主页 -->
+        <activity
+            android:name=".business.HomeActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboard|keyboardHidden|navigation|screenSize|fontScale"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitle"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".business.MeetingSearchActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|screenSize|fontScale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.OnCallActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|screenSize|fontScale"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.BindActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|screenSize|fontScale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.DistrictActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|screenSize|fontScale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.ReplyReviewActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|screenSize|fontScale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.SettingActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|screenSize|fontScale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.agora.openlive.ui.MainActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|screenSize|fontScale"
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name="io.agora.openlive.ui.LiveRoomActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize|fontScale"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name="io.agora.openlive.ui.MeetingInitActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name="io.agora.openlive.ui.MeetingBroadcastActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize|fontScale"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name="io.agora.openlive.ui.MeetingAudienceActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize|fontScale"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".ameeting.MakerMeetingAudienceActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize|fontScale"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name="io.agora.openlive.ui.InviteMeetingBroadcastActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name="io.agora.openlive.ui.InviteMeetingAudienceActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".business.LinkEntryActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="com.zy.train"
+                    android:pathPrefix="/meeting"
+                    android:scheme="app" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".business.PhoneRegisterActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|screenSize|fontScale"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitle"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".business.PostTypeActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|screenSize|fontScale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.GridActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|screenSize|fontScale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.CustomActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|screenSize|fontScale"
+            android:screenOrientation="portrait" />
+        <activity android:name=".business.UpdateActivity" />
+        <activity android:name=".business.ViewPagerActivity" />
+        <activity android:name=".business.ImageBrowerActivity" />
+        <activity
+            android:name=".business.MeetingManagementActivity"
+            android:theme="@style/NoTitle" />
+        <activity
+            android:name=".business.MeetingPublishActivity"
+            android:theme="@style/NoTitle" />
+        <activity
+            android:name=".business.ForumActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboard|keyboardHidden|navigation|screenSize|fontScale"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitle"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.zaaach.citypicker.CityPickerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CityPicker.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <meta-data
+            android:name="TD_APP_ID"
+            android:value="${TD_APP_ID}" /> <!-- 服务开始 -->
+        <meta-data
+            android:name="TD_CHANNEL_ID"
+            android:value="${TD_CHANNEL_ID}" /> <!-- 服务结束 -->
+        <!-- TD统计 开始 -->
+        <receiver android:name=".receiver.PhoneReceiver">
+            <intent-filter>
+
+                <!-- 获取来电广播 -->
+                <action android:name="android.intent.action.PHONE_STATE" />
+                <!-- 获取去电广播 -->
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+            </intent-filter>
+        </receiver> <!-- TD统计 使用build配置 -->
+        <!-- <service android:name=".service.WSService" /> -->
+        <!--
+  <service
+            android:name="com.talkingdata.sdk.TDAntiCheatingService"
+            android:process="com.talkingdata.sdk.TDAntiCheatingService"> &lt;!&ndash; 用户质量评估Service可以配置在主进程或者单独进程 &ndash;&gt;
+            <intent-filter>
+                <action android:name="com.talkingdata.sdk.TDAntiCheatingService" />
+            </intent-filter>
+        </service>
+        -->
+        <activity
+            android:name="com.tencent.bugly.beta.ui.BetaActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <service android:name=".core.PlayService" />
+        <service android:name=".core.FloatingService" />
+        <service
+            android:name=".core.GeTuiService"
+            android:exported="true"
+            android:label="PushService"
+            android:process=":pushservice" />
+        <service
+            android:name=".core.GeTuiIntentService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <provider
+            android:name=".config.MyFileProvider"
+            android:authorities="com.zhongyou.meet.mobile.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <receiver
+            android:name=".core.JPushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+                <action android:name="cn.jpush.android.intent.REGISTRATION" /> <!-- 字符串值 取得 Registration ID -->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" /> <!-- 收到了自定义消息 Push -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_CLICK_ACTION" />
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+
+                <category android:name="com.zhongyou.meet.mobile" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".core.JPushServices"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":pushcore">
+            <intent-filter>
+                <action android:name="cn.jiguang.user.service.action" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            tools:node="replace">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
+                <!-- Required  显示通知栏 -->
+                <category android:name="com.zhongyou.meet.mobile" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.NewMakerCourseReceiver">
+            <intent-filter android:priority="10001">
+                <action android:name="ACTION_MUSIC_STARTED" />
+                <action android:name="ACTION_UPDATE_PROGRESS" />
+                <action android:name="ACTION_ONLINE_MUSIC" />
+                <action android:name="ACTION_LOCAL_MUSIC" />
+                <action android:name="ACTION_STATR_MUSIC" />
+                <action android:name="ACTION_PAUSE_MUSIC" />
+                <action android:name="ACTION_NEXT_MUSIC" />
+                <action android:name="ACTION_COMPLETE_MUSIC" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.MoreMakerDetailsReciver">
+            <intent-filter android:priority="10002">
+                <action android:name="ACTION_MUSIC_STARTED" />
+                <action android:name="ACTION_UPDATE_PROGRESS" />
+                <action android:name="ACTION_ONLINE_MUSIC" />
+                <action android:name="ACTION_LOCAL_MUSIC" />
+                <action android:name="ACTION_STATR_MUSIC" />
+                <action android:name="ACTION_PAUSE_MUSIC" />
+                <action android:name="ACTION_NEXT_MUSIC" />
+                <action android:name="ACTION_COMPLETE_MUSIC" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.MoreMakerCourseAudioReciver">
+            <intent-filter android:priority="10003">
+                <action android:name="ACTION_MUSIC_STARTED" />
+                <action android:name="ACTION_UPDATE_PROGRESS" />
+                <action android:name="ACTION_ONLINE_MUSIC" />
+                <action android:name="ACTION_LOCAL_MUSIC" />
+                <action android:name="ACTION_STATR_MUSIC" />
+                <action android:name="ACTION_PAUSE_MUSIC" />
+                <action android:name="ACTION_NEXT_MUSIC" />
+                <action android:name="ACTION_COMPLETE_MUSIC" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

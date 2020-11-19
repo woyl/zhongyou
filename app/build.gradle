@@ -1,0 +1,408 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.huawei.agconnect'
+
+def static getDate() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMdd-HHmmss')
+    return formattedDate
+}
+
+def static getGitCommitId() {
+    def cmd = 'git rev-parse --short HEAD'
+    return cmd.execute().text.trim().toString()
+}
+
+def static getGitBranch() {
+    def cmd = 'git symbolic-ref --short -q HEAD'
+    return cmd.execute().text.trim().toString()
+}
+
+def static getGitLog() {
+    def cmd = 'git log -1 --pretty=oneline'
+    return cmd.execute().text.trim().toString()
+}
+
+// Create a variable called keystorePropertiesFile, and initialize it to your
+// keystore.properties file, in the rootProject folder.
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+// Initialize a new Properties() object called keystoreProperties.
+def keystoreProperties = new Properties()
+// Load your keystore.properties file into the keystoreProperties object.
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+    packagingOptions {
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    signingConfigs {
+        config {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.zhongyou.meet.mobile"
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionName rootProject.ext.android["versionName"]
+        versionCode rootProject.ext.android["versionCode"]
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //默认编译赋值
+        buildConfigField "String", "GIT_BRANCH", '"' + getGitBranch() + '"'
+        buildConfigField 'String', 'GIT_COMMIT', '"' + getGitCommitId() + '"'
+        buildConfigField 'String', 'GIT_LOG', '"' + getGitLog() + '"'
+        buildConfigField 'String', 'DATE', '"' + getDate().toString() + '"'
+
+        ndk {
+            abiFilters "armeabi-v7a"
+//            abiFilters "armeabi-v7a", "x86"
+            // DO NOT MODIFY THIS LINE, IT'S UPDATED BY BUILD MACHINE AUTOMATICALLY.
+        }
+
+        manifestPlaceholders = [
+                //个推应用参数，请填写您申请的 GETUI_APP_ID，GETUI_APP_KEY，GETUI_APP_SECRET 值
+                GETUI_APP_ID    : "6bfXgGsuWW71onaclUJ3kA",
+                GETUI_APP_KEY   : "BLc39DFBPo5BKTyP5gtbxA",
+                GETUI_APP_SECRET: "3Y6kG6i9wV7F2swJKSn2C7",
+
+                JPUSH_PKGNAME   : applicationId,
+                JPUSH_APPKEY    : "8fe1591bb73471cfac5405c4", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL   : "developer-default", //暂时填写默认值即可.
+
+                // 设置manifest.xml中的变量
+                XIAOMI_APPKEY   : "MI-5841826554478", // 小米平台注册的appkey
+                XIAOMI_APPID    : "MI-2882303761518265478", // 小米平台注册的appid
+
+                VIVO_APPKEY     : "3e26c40f2d40ebf5a1f9effef67a61e2", // VIVO平台注册的appkey
+                VIVO_APPID      : "104492876", // VIVO平台注册的appid
+
+                OPPO_APPKEY     : "OP-bf220a56771f41df84f6ac043ff42b80", // OPPO平台注册的appkey
+                OPPO_APPID      : "OP-30243221", // OPPO平台注册的appid
+                OPPO_APPSECRET  : "OP-620dd76d54a04f5aa568213e9fc42a7a",//OPPO平台注册的appsecret
+
+                // 设置manifest.xml中的变量 MZ-0956b96085d54c6087b85c7994b02ddf MZ-110443
+                MEIZU_APPKEY    : "MZ-fdb962879e014fe394a3e9405f0a8f65", // 魅族平台注册的appkey
+                MEIZU_APPID     : "MZ-135056", // 魅族平台注册的appid
+
+        ]
+        multiDexEnabled true
+        renderscriptTargetApi 25
+        renderscriptSupportModeEnabled true
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    dexOptions {
+        jumboMode true
+    }
+
+    buildTypes {
+        debug { // debug模式
+            // 签名
+            signingConfig signingConfigs.config
+            buildConfigField "boolean", "IS_DEBUG_LOG", "true"  //显示LOG
+            buildConfigField "boolean", "IS_DEBUG_TOAST", "true"  //显示LOG的TOAST
+            buildConfigField "boolean", "IS_HEART_LOG", "false"  //显示心跳的http日志
+
+            buildConfigField 'String', 'API_DOMAIN_NAME', '"https://osgtadmin.zhongyouie.cn"'
+//            buildConfigField 'String', 'API_DOMAIN_NAME', '"http://osg.apitest.zhongyouie.cn"'
+//            buildConfigField 'String', 'API_DOMAIN_NAME', '"http://api.zhongyouie.com"'
+            buildConfigField 'String', 'API_DOMAIN_NAME_YOYOTU', '"http://tapi.zhongyouie.cn"'
+//唷唷兔地址
+
+            buildConfigField 'String', 'WS_DOMAIN_NAME', '"http://wstest.zhongyouie.cn/sales"'
+            buildConfigField 'String', 'WEIXIN_APP_ID', '"wx9a61fda9d6d2e0fb"' //微信id
+            buildConfigField 'String', 'BUGLY_APPID', '"562c412edd"' //bugly
+            buildConfigField 'String', 'QINIU_IMAGE_DOMAIN', '"http://image.i.teq6.com/"'
+            //七牛图片domain
+            buildConfigField 'String', 'QINIU_IMAGE_UPLOAD_PATH', '"osg/snapscreen/meeting/"'
+            //七牛图片上传路径
+            manifestPlaceholders = [TD_APP_ID    : "02A562AEDBE243D7A64901F852E1A530",
+                                    TD_CHANNEL_ID: "default"]
+
+            //开启混淆
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled false
+            //Zipalign优化
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            signingConfig signingConfigs.config
+            buildConfigField "boolean", "IS_DEBUG_LOG", "false"  //显示LOG
+            buildConfigField "boolean", "IS_DEBUG_TOAST", "false"  //显示LOG的TOAST
+
+
+//            buildConfigField 'String', 'API_DOMAIN_NAME', '"http://osg.apitest.zhongyouie.cn"'
+            buildConfigField 'String', 'API_DOMAIN_NAME', '"https://api.zhongyouie.com"'
+            buildConfigField 'String', 'API_DOMAIN_NAME_YOYOTU', '"http://tapi.zhongyouie.cn"'
+            buildConfigField 'String', 'WS_DOMAIN_NAME', '"http://wstest.zhongyouie.cn/sales"'
+//唷唷兔地址
+//
+//            buildConfigField 'String', 'API_DOMAIN_NAME', '"http://api.zhongyouie.com"'
+//            buildConfigField 'String', 'API_DOMAIN_NAME_YOYOTU', '"http://api.haierzhongyou.com"'//唷唷兔地址
+//            buildConfigField 'String', 'WS_DOMAIN_NAME', '"http://ws.zhongyouie.com/sales"'
+            buildConfigField 'String', 'WEIXIN_APP_ID', '"wx9a61fda9d6d2e0fb"' //微信id
+            buildConfigField 'String', 'BUGLY_APPID', '"631fb00270"' //bugly
+            buildConfigField 'String', 'QINIU_IMAGE_DOMAIN', '"https://image.i.zhongyouie.com/"'
+            //七牛图片domain
+            buildConfigField 'String', 'QINIU_IMAGE_UPLOAD_PATH', '"osg/snapscreen/meeting/"'
+            //七牛图片上传路径
+            manifestPlaceholders = [TD_APP_ID    : "80F452C9B1E8427AB65DB774F7FF081F",
+                                    TD_CHANNEL_ID: "default"]
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            if (outputFileName.endsWith(".apk")) {
+                def fileName = "Guide-Mobile_" + "_" + variant.buildType.name + "_" + variant.versionName + "_" + variant.versionCode + "_" + getDate() + ".apk"
+                outputFileName = fileName
+            }
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    //底部弹窗
+    implementation project(':IosDialog')
+
+    //会议拍照
+    implementation project(path: ':MeetingCamera')
+
+    //城市选择
+    implementation project(path: ':YCUpdateLib')
+
+    //    implementation project(':takephoto_library')
+    implementation project(path: ':dialog')
+    implementation project(path: ':floatwindow')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation rootProject.ext.dependencies["junit"]
+    debugImplementation rootProject.ext.dependencies["canary-debug"]
+    releaseImplementation rootProject.ext.dependencies["canary-release"]
+    testImplementation rootProject.ext.dependencies["canary-release"]
+
+    //    implementation 'com.android.support:support-v4:28.0.0'
+    implementation rootProject.ext.dependencies["design"]
+    implementation rootProject.ext.dependencies["recyclerview-v7"]
+    implementation 'com.android.support:multidex:1.0.1'
+    implementation 'org.slf4j:slf4j-api:1.7.25'
+    implementation rootProject.ext.dependencies['retrofit-adapter-rxjava2']
+
+    //    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+
+    //图片加载
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    // ================微信相关================
+
+    //    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.3.4'
+    api rootProject.ext.dependencies["dagger2"]
+    kapt rootProject.ext.dependencies["dagger2-compiler"]
+
+    //崩溃检测
+    implementation 'com.tencent.bugly:crashreport_upgrade:latest.release'
+
+    //其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.2.0
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+
+    //内存泄露检测    https://github.com/square/leakcanary
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+
+    //view依赖注入根据layout 自动生成控件字段和自动查找
+    implementation rootProject.ext.dependencies["androideventbus"]
+    implementation rootProject.ext.dependencies["support-v4"]
+    implementation rootProject.ext.dependencies["gson"]
+    implementation rootProject.ext.dependencies["appcompat-v7"]
+    implementation rootProject.ext.dependencies["cardview-v7"]
+    implementation rootProject.ext.dependencies["androideventbus"]
+    implementation rootProject.ext.dependencies["autosize"]
+
+    //    implementation 'me.jessyan:arms-imageloader-glide:2.5.2'
+
+    //    implementation rootProject.ext.dependencies["butterknife"]
+    kapt(rootProject.ext.dependencies["butterknife-compiler"]) {
+        exclude module: 'support-annotations'
+    }
+
+    //图片带边
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+
+    //    implementation 'com.rengwuxian.materialedittext:landroid.arch.coreibrary:2.1.4'
+
+    //照片选择
+
+    //    implementation 'com.jph.takephoto:takephoto_library:4.0.3'
+
+    //rxbus
+
+    //    implementation 'io.reactivex:rxjava:1.3.0'
+
+    //    implementation 'io.reactivex:rxandroid:1.2.1'
+
+    // https://mvnrepository.com/artifact/io.socket/socket.io-client
+    implementation('io.socket:socket.io-client:1.0.0') {
+        exclude group: 'org.json', module: 'json'
+    }
+
+    //    implementation 'com.google.code.gson:gson:2.8.5'
+
+    //七牛云存储
+    implementation 'com.qiniu:qiniu-android-sdk:7.3.+'
+
+    //fastjson
+    implementation 'com.alibaba:fastjson:1.1.71.android'
+    implementation 'pub.devrel:easypermissions:1.1.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation project(path: ':photolib')
+    implementation 'com.makeramen:roundedimageview:2.2.1'
+    implementation 'com.orhanobut:logger:2.2.0'
+    implementation 'com.github.GrenderG:Toasty:1.4.2'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.lxj:xpopup:1.8.10'
+
+    //    implementation 'me.jessyan:arms:2.5.2'
+    implementation 'org.ligboy.retrofit2:converter-fastjson-android:2.1.0'
+    implementation 'com.elvishew:xlog:1.6.1'
+    implementation project(path: ':vlayout')
+    implementation 'q.rorbin:badgeview:1.1.3'
+    implementation 'com.lzy.net:okrx:1.0.2'
+    implementation 'com.lzy.net:okgo:3.0.4'
+    implementation project(path: ':anglePop')
+    implementation project(path: ':jjdxm-ijkplayer')
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0'
+    compile project(path: ':citypicker')
+    implementation 'com.github.sd6352051:NiftyDialogEffects:v1.0.3'
+    compile project(path: ':jiaozivideoplayer')
+    implementation 'me.kareluo.ui:popmenu:1.1.0'
+    implementation 'com.mylhyl:circleDialog:2.6.16'
+    implementation 'com.llew.huawei:verifier:1.1.2'
+
+    /* api 'cn.rongcloud.sdk:im_kit:2.10.4'
+
+        //im_kit必须依赖im_lib，所以需要加入对应依赖
+        api 'cn.rongcloud.sdk:im_lib:2.10.4'*/
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
+    implementation files('libs/Android_Map3D_SDK_V6.9.3_20191018.jar')
+    implementation files('libs/Amap_2DMap_V5.2.0_20170627.jar')
+    implementation files('libs/AMap_Search_V6.9.3_20190722.jar')
+    implementation('me.majiajie:pager-bottom-tab-strip:2.3.0') {
+        exclude group: 'com.android.support'
+    }
+
+    //腾讯的键值对本地存贮
+    implementation 'com.tencent:mmkv:1.0.24'
+
+    // 使用Android生命周期作为提供者
+
+    //无需继承，任何有声明周期的组件都可以直接使用
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-android-lifecycle:2.2.2'
+    implementation project(path: ':arms')
+    implementation 'cn.bingoogolapple:bga-banner:2.2.7'
+    implementation 'com.bigkoo:ConvenientBanner:2.1.4'
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    implementation 'com.github.maning0303:MNProgressHUD:V2.0.0'
+    implementation 'com.github.lygttpod:SuperTextView:2.4.2'
+    implementation 'jp.wasabeef:blurry:3.0.0'
+    implementation 'com.sackcentury:shinebutton:0.1.9'
+    implementation 'com.github.jd-alexander:LikeButton:0.2.3'
+    implementation 'com.xj.marqueeView:marqueeView:0.1.20'
+    implementation 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
+    implementation 'com.zhihu.android:matisse:0.5.1'
+    implementation 'com.flipboard:bottomsheet-core:1.5.3'
+    implementation 'liji.library.dev:citypickerview:5.2.2'
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
+    implementation 'com.github.mmin18:realtimeblurview:1.0.6'
+    implementation 'com.just.agentwebX5:agentwebX5:2.0.0'
+    implementation 'com.github.ome450901:SimpleRatingBar:1.4.3'
+    implementation 'com.xw.repo:bubbleseekbar:3.20'
+    implementation 'top.zibin:Luban:1.1.8'
+    implementation 'cat.ereza:customactivityoncrash:1.5.0'
+    implementation project(path: ':IMKit')
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+    implementation files('libs/tbs_sdk_thirdapp_v4.3.0.3_43903_sharewithdownloadwithfile_withoutGame_obfs_20200402_121309.jar')
+    implementation 'id.zelory:compressor:1.0.3'
+    implementation 'com.github.lzyzsd:circleprogress:1.2.1'
+    implementation project(path: ':whiteboard')
+    implementation "org.jetbrains.anko:anko:$anko_version"
+    implementation 'com.google.android:flexbox:1.0.0'
+
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+//fastjson to  kotlin 解决报错 default constructor not found
+    implementation 'me.tatarka.bindingcollectionadapter2:bindingcollectionadapter:2.2.0'
+    implementation 'me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-recyclerview:2.2.0'
+
+    //noinspection GradleDependency
+    implementation('io.agora.rtc:full-sdk:2.9.0.106') {
+        exclude group: 'androidx'
+    }
+
+    implementation "com.getui:sdk:2.14.1.0"//腾讯个推
+    implementation 'cn.jiguang.sdk:jpush:3.8.0'//极光推送
+    implementation 'cn.jiguang.sdk:jcore:2.5.1'//极光推送
+    implementation 'cn.jiguang.sdk.plugin:xiaomi:3.8.0'
+    // JPushSDK3.8.0为例（⼚商版本和jpush SDK版本保持⼀致，如果需要升级jpush S DK版本，注意⼚商SDK版本的升级）
+    implementation 'cn.jiguang.sdk.plugin:vivo:3.8.0'
+    implementation 'cn.jiguang.sdk.plugin:oppo:3.8.0'
+    implementation 'cn.jiguang.sdk.plugin:meizu:3.8.0'
+    implementation 'cn.jiguang.sdk.plugin:huawei:3.8.0'
+    implementation 'com.huawei.hms:push:4.0.2.300'
+
+    implementation 'androidx.viewpager2:viewpager2:1.1.0-alpha01'
+    implementation 'com.google.android.material:material:1.3.0-alpha03'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.7"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.7"
+    implementation 'com.caverock:androidsvg-aar:1.3'
+    // 基础依赖包，必须要依赖
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+// fragment快速实现（可选）
+    implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0'
+// kotlin扩展（可选）
+    implementation 'com.gyf.immersionbar:immersionbar-ktx:3.0.0'
+    implementation 'com.github.woyl:public_tools:1.0.7'
+//    implementation "me.leolin:ShortcutBadger:1.1.22@aar"
+
+    implementation 'com.github.killerdiary:Widget_UI:1.0.11'
+}

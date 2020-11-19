@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="150pt"
+        android:orientation="vertical"
+        android:background="@color/color_4095e8">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="@dimen/dp17"
+            android:layout_marginTop="20pt"
+            android:layout_marginRight="@dimen/dp17"
+            android:layout_marginBottom="@dimen/dp3"
+            android:gravity="center_vertical"
+            android:background="@drawable/button_home_search"
+            android:layout_height="@dimen/dp35">
+            <ImageView
+                android:layout_width="@dimen/dp18"
+                android:src="@drawable/fdj"
+                android:layout_marginLeft="@dimen/dp17"
+                android:layout_height="@dimen/dp18" />
+            <TextView
+                android:gravity="center_vertical"
+                android:id="@+id/input_keyword"
+                android:layout_width="0dp"
+                android:background="@color/color_347bbf"
+                android:layout_marginRight="@dimen/dp15"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:paddingLeft="@dimen/dp7"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/sp17"
+                android:layout_height="@dimen/dp44"
+                android:singleLine="true"
+                android:hint="请输入教室名称"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/mSwipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/cordinatorLayout_forum"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/rong_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/emptyView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:gravity="center_horizontal"
+                android:drawablePadding="8dp"
+                android:drawableTop="@drawable/c"
+                android:text="暂时还没接到电话哦"
+                android:textColor="@color/text_gray_909090"
+                android:textSize="15sp"
+                android:visibility="gone" />
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+
+</LinearLayout>

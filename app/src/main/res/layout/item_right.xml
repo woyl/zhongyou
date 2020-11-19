@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="@dimen/my_px_28"
+        android:layout_marginBottom="@dimen/my_px_28"
+        android:orientation="horizontal">
+
+        <ProgressBar
+            android:layout_gravity="center_vertical"
+            android:id="@+id/send_bar"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+        <ImageView
+            android:scaleType="centerInside"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/send_sate"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/msg_error"
+            android:visibility="visible"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#909090"
+                android:textSize="@dimen/my_px_35"
+                android:layout_gravity="right"
+                android:layout_marginRight="8dp"
+                android:visibility="gone"
+                android:text="玫瑰"/>
+            <LinearLayout
+                android:layout_gravity="end"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/my_px_15"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                </RelativeLayout>
+                <TextView
+
+                    android:id="@+id/tv_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/chat_mes_right_bg"
+                    android:textSize="@dimen/my_px_40"
+                    android:textColor="#0b0b0b"
+                    android:maxEms="15"
+                    android:padding="7dp"
+                    android:text="我在说。。。。"/>
+                <ImageView
+                    android:id="@+id/img_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-1px"
+                    android:background="@mipmap/chat_arrow_right"/>
+            </LinearLayout>
+
+
+
+
+            <ImageView
+                android:src="@drawable/loading"
+                android:scaleType="centerCrop"
+                android:id="@+id/img_pic"
+                android:layout_width="@dimen/my_px_500"
+                android:layout_height="@dimen/my_px_320"
+                android:layout_gravity="right"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="@dimen/my_px_12"
+               />
+
+            <TextView
+
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/send_err"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#F43530"
+                android:textSize="@dimen/my_px_30"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/my_px_24"
+                android:text="发送失败"/>
+        </LinearLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/mIvHead"
+            android:layout_width="@dimen/my_px_95"
+            android:layout_height="@dimen/my_px_95"
+            android:src="@mipmap/baby_default_avatar"
+
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="16dp"
+    android:background="@color/white"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_head"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp160"
+        android:scaleType="fitXY"
+        tools:background="@drawable/bg_invite_meeting"/>
+
+    <FrameLayout
+        android:id="@+id/flyLiveDoing"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp160"
+        android:visibility="gone"
+        tools:visibility="visible"  >
+
+        <com.hy.frame.widget.QRoundImage
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:designRadius="10pt"
+            android:src="#4D000000"/>
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_room_live_play"/>
+    </FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_state"
+        android:layout_width="@dimen/dp65"
+        android:layout_height="@dimen/dp26"
+        app:layout_constraintTop_toTopOf="@+id/img_head"
+        app:layout_constraintStart_toStartOf="@+id/img_head"
+        android:src="@mipmap/soon_starting"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_content"
+        app:layout_constraintTop_toBottomOf="@+id/img_head"
+        android:layout_marginTop="@dimen/dp12"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/color_333333"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="《我们一起去找五颜六色的花吧！》系列"/>
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_marginBottom="@dimen/dp10"
+        android:layout_marginStart="@dimen/dp5"
+        android:layout_marginEnd="@dimen/dp5"
+        android:background="@color/cf8f8f8"/>
+
+    <com.zhongyou.meet.mobile.view.CircleImageView
+        android:id="@+id/img_small_head"
+        android:layout_width="@dimen/dp21"
+        android:layout_height="@dimen/dp21"
+        android:layout_marginTop="@dimen/dp5"
+        app:layout_constraintTop_toBottomOf="@+id/view_line"
+        tools:background="@drawable/ico_face"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/img_small_head"
+        app:layout_constraintBottom_toBottomOf="@+id/img_small_head"
+        app:layout_constraintStart_toEndOf="@+id/img_small_head"
+        app:layout_constraintTop_toBottomOf="@+id/view_line"
+        android:textColor="@color/color_666666"
+        android:textSize="11sp"
+        android:layout_marginStart="@dimen/dp5"
+        tools:text="讲师：唐双艺"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/img_small_head"
+        app:layout_constraintBottom_toBottomOf="@+id/img_small_head"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="10sp"
+        android:drawablePadding="@dimen/dp5"
+        android:gravity="center"
+        android:drawableEnd="@mipmap/notice"
+        android:textColor="@color/color_999999"
+        app:layout_constraintTop_toBottomOf="@+id/view_line"
+        tools:text="直播时间：2020-08-30 20:30"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

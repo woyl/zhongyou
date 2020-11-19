@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+<!--    android:fitsSystemWindows="true"-->
+
+    <FrameLayout
+        android:id="@+id/fl_login_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/login_bg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_2"
+        app:layout_constraintBottom_toBottomOf="@+id/fl_login_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fl_login_bg" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp20"
+        android:layout_marginStart="@dimen/dp30"
+        android:layout_marginEnd="@dimen/dp30"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="@dimen/dp5"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp25"
+                android:layout_marginRight="@dimen/dp25"
+                android:background="@drawable/white_conner"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/txt_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp45"
+                    android:background="@color/white"
+                    android:digits="0123456789"
+                    android:drawableStart="@drawable/dh"
+                    android:drawablePadding="@dimen/dp20"
+                    android:textColor="@color/color_999999"
+                    android:hint="@string/txt_phone"
+                    android:inputType="phone"
+                    android:singleLine="true"
+                    android:textSize="@dimen/sp15" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1"
+                    android:layout_marginTop="@dimen/dp8"
+                    android:background="@color/ce3e3e3" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp40"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/txt_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/yzm"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/color_999999"
+                        android:drawablePadding="@dimen/dp20"
+                        android:hint="@string/txt_code"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="@dimen/sp15" />
+
+                    <Button
+                        android:id="@+id/bt_getcode_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp28"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/button_y_circle"
+                        android:gravity="center"
+                        android:text="@string/bt_getcode_text"
+                        android:textColor="@color/color_4095e8"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1"
+                    android:layout_marginTop="@dimen/dp8"
+                    android:background="@color/ce3e3e3" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15">
+
+                    <ImageView
+                        android:id="@+id/check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp5"
+                        android:visibility="gone"
+                        android:layout_centerVertical="true"
+                        android:scaleType="center"
+                        android:src="@drawable/icon_check" />
+
+                    <TextView
+                        android:id="@+id/hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dp2"
+                        android:layout_toEndOf="@+id/check"
+                        android:textColor="@color/color_333333"
+                        android:gravity="center"
+                        android:text="登录即表示同意"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/argment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/hint"
+                        android:gravity="center"
+                        android:text='《用户协议》'
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/tv_he"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/argment"
+                        android:textColor="@color/color_333333"
+                        android:textSize="10sp"
+                        android:text="和" />
+
+                    <TextView
+                        android:id="@+id/argmentPrivate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/tv_he"
+                        android:gravity="center"
+                        android:text='《隐私政策》'
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="10sp" />
+                </RelativeLayout>
+
+                <com.allen.library.SuperButton
+                    android:id="@+id/bt_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp40"
+                    android:layout_marginBottom="@dimen/dp40"
+                    android:text="登录"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp16"
+                    android:visibility="visible"
+                    app:sCornersRadius="10dp"
+                    app:sSelectorNormalColor="@color/color_4095e8"
+                    app:sSelectorPressedColor="@color/gray"
+                    app:sUseSelector="true" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+    <RelativeLayout
+        android:id="@+id/layout_wx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp60"
+        android:layout_marginEnd="@dimen/dp60"
+        app:layout_constraintTop_toBottomOf="@+id/card_view"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <View
+            android:id="@+id/view_l"
+            android:layout_width="@dimen/dp80"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/line_wechat" />
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/icon_wechat"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:layout_width="@dimen/dp80"
+            android:layout_height="1dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/line_wechat" />
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

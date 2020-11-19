@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mvp.ui.activity.MoreDetailsActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/base_tool_bar_k"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_head"
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        android:layout_marginTop="@dimen/dp10"
+        android:background="@color/white"
+        android:padding="@dimen/dp10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/fl_aniu"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_marginStart="@dimen/dp8"
+            tools:text="幼儿园招生如何吸引家长？"
+            android:textStyle="bold"
+            android:textColor="@color/color_333333"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_time_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_title"
+            android:layout_marginTop="@dimen/dp10"
+            android:textColor="@color/color_999999"
+            tools:text="2020-08-10  |  主讲人：招生工作"/>
+
+
+        <FrameLayout
+            android:id="@+id/fl_aniu"
+            android:layout_width="@dimen/dp33"
+            android:layout_height="@dimen/dp33"
+            android:layout_marginEnd="@dimen/dp11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_title"
+            app:layout_constraintBottom_toBottomOf="@id/tv_time_author">
+
+            <com.zhongyou.meet.mobile.view.CompletedProgressView
+                android:id="@+id/circle_progress_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:circleColor="@color/transparent"
+                app:radius="@dimen/dp13"
+                android:layout_gravity="center"
+                app:ringBgColor="@color/cbfcdde"
+                app:ringColor="@color/c3a8ae6"
+                app:strokeWidth="@dimen/dp2"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_play_button"
+                android:layout_gravity="center"
+                android:layout_width="@dimen/dp15"
+                android:layout_height="@dimen/dp15"
+                android:src="@mipmap/pause_music"/>
+
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@+id/constraint_head">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp140"/>
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

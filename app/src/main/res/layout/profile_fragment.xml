@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/color_f9f9f9"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:gravity="center"
+        android:background="@color/color_4095e8"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/my_px_150">
+        <TextView
+            android:text="我的"
+            android:textColor="@color/white"
+            android:textSize="@dimen/my_px_40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/mSwipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/layout_info"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_height="@dimen/dp145">
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/img_face"
+                    android:layout_width="@dimen/dp84"
+                    android:layout_height="@dimen/dp84"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:src="@drawable/tx"
+                    app:riv_oval="true" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/dp15"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        tools:text="..."
+                        android:textColor="@color/color_333333"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/sp25"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp9"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="@dimen/dp31"
+                            android:layout_height="@dimen/dp18"
+                            android:text="No"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp13"
+                            android:gravity="center"
+                            android:background="@drawable/hs" />
+                        <TextView
+                            android:id="@+id/tv_code"
+                            android:layout_width="wrap_content"
+                            android:text="11060696"
+                            android:textColor="@color/color_666666"
+                            android:layout_marginLeft="@dimen/dp5"
+                            android:textSize="@dimen/sp14"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="@dimen/dp18"
+                    android:src="@drawable/y"
+                    android:layout_marginRight="@dimen/dp15"
+                    android:layout_height="@dimen/dp18" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layout_set"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dp5"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@color/white"
+                android:layout_height="@dimen/dp60">
+                <ImageView
+                    android:layout_width="@dimen/dp20"
+                    android:src="@drawable/sz"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_height="@dimen/dp20" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="设置"
+                    android:textColor="@color/color_333333"
+                    android:layout_marginLeft="@dimen/dp15"
+                    android:textSize="@dimen/sp18"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:layout_width="@dimen/dp18"
+                    android:src="@drawable/y"
+                    android:layout_marginRight="@dimen/dp15"
+                    android:layout_height="@dimen/dp18" />
+            </LinearLayout>
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/layout_evaluation"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dp5"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@color/white"
+                android:layout_height="@dimen/dp60">
+                <ImageView
+                    android:layout_width="@dimen/dp20"
+                    android:src="@drawable/pj"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_height="@dimen/dp20" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="评价"
+                    android:textColor="@color/color_333333"
+                    android:layout_marginLeft="@dimen/dp15"
+                    android:textSize="@dimen/sp18"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:layout_width="@dimen/dp18"
+                    android:src="@drawable/y"
+                    android:layout_marginRight="@dimen/dp15"
+                    android:layout_height="@dimen/dp18" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

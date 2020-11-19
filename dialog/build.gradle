@@ -1,0 +1,34 @@
+apply plugin: 'com.android.library'
+
+
+
+group = "com.kongzue.dialog_v3"
+version = "3.1.9"
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 28
+        versionCode 79
+        versionName "3.1.9"
+
+        renderscriptTargetApi 17
+        renderscriptSupportModeEnabled true    // Enable RS support
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+}

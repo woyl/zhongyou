@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/toolsbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/makerChatContent"
+        android:layout_toEndOf="@+id/makerChatContent"
+        android:background="@drawable/bg_buttom_meeting"
+        android:gravity="right"
+        android:orientation="horizontal"
+        android:paddingLeft="30dp"
+        android:paddingTop="@dimen/dp12"
+        android:paddingBottom="@dimen/dp12"
+        tools:ignore="RtlHardcoded">
+
+        <Button
+            android:id="@+id/request_talk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@color/transparent"
+            android:drawableTop="@drawable/icon_requer_speek"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="申请发言"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/stop_talk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@color/transparent"
+            android:drawableTop="@drawable/icon_exity"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="结束发言"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/mute_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@color/transparent"
+            android:drawableTop="@drawable/icon_speek"
+            android:drawablePadding="3dp"
+            android:gravity="center_horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="话筒打开"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/bt_beautiful"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:background="@color/transparent"
+            android:drawableTop="@drawable/beautiful_selector"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="美颜"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+
+        <Button
+            android:id="@+id/switch_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:background="@color/transparent"
+            android:drawableTop="@drawable/icon_switch_camera"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="切换摄像"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/full_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:background="@color/transparent"
+            android:drawableTop="@drawable/icon_full_screen"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="全屏"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="visible" />
+
+
+        <Button
+            android:id="@+id/discuss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginRight="15dp"
+            android:background="@color/transparent"
+            android:drawableTop="@drawable/icon_chat"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="讨论区"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/chairManOperaTools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/makerChatContent"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/makerChatContent"
+        android:background="@drawable/bg_buttom_meeting"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/buttonLinear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/waiter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@color/transparent"
+                android:drawableTop="@drawable/icon_people"
+                android:gravity="center_horizontal"
+                android:paddingLeft="6pt"
+                android:text="参会人"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/stop_audience"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:drawableTop="@drawable/icon_exity"
+                android:gravity="center_horizontal"
+                android:paddingLeft="6pt"
+                android:text="终止发言"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:visibility="invisible"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/doc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:drawableTop="@drawable/icon_ppt"
+                android:gravity="center_horizontal"
+                android:paddingLeft="6pt"
+                android:text="资料"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+
+            <TextView
+                android:id="@+id/mute_audio_chairman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:drawableTop="@drawable/icon_speek"
+                android:gravity="center_horizontal"
+                android:paddingLeft="6pt"
+                android:text="话筒打开"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/spliteView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:drawableTop="@drawable/bg_meeting_spilt_selector"
+                android:gravity="center"
+                android:paddingLeft="6pt"
+                android:text="均分模式"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/full_screen_chairman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:background="@color/transparent"
+                android:drawableTop="@drawable/icon_full_screen"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="全屏"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:visibility="visible" />
+
+
+            <LinearLayout
+                android:id="@+id/doc_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:orientation="horizontal"
+                android:paddingLeft="6pt"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/preview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:background="@color/transparent"
+                    android:drawableTop="@drawable/icon_previous"
+                    android:gravity="center"
+                    android:paddingLeft="6pt"
+                    android:text="上一页"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:drawableTop="@drawable/icon_next"
+                    android:gravity="center"
+                    android:paddingLeft="6pt"
+                    android:shadowColor="@color/black"
+                    android:text="下一页"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/exit_ppt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:drawableTop="@drawable/icon_exit_ppt"
+                    android:gravity="center"
+                    android:paddingLeft="6pt"
+                    android:shadowColor="@color/black"
+                    android:text="退出PPT"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</merge>

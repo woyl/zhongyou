@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/recommendAudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="30pt">
+
+        <TextView
+            android:id="@+id/className"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20pt"
+            android:layout_marginTop="18pt"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="提高课程音频日更新"
+            android:textColor="@android:color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/teacherName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/className"
+            android:layout_alignLeft="@+id/className"
+            android:layout_marginTop="23pt"
+            android:text="主讲人：王某某" />
+
+        <TextView
+            android:id="@+id/classTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/teacherName"
+            android:layout_centerHorizontal="true"
+            android:text="00:00/01:20"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/classDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/classTime"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16pt"
+            android:text="3月29日" />
+
+        <ImageView
+            android:id="@+id/audioState"
+            android:layout_width="wrap_content"
+            android:layout_height="80pt"
+            android:layout_alignRight="@+id/classDate"
+            android:scaleType="center"
+            android:src="@drawable/audio" />
+
+        <com.xw.repo.BubbleSeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/classDate"
+            android:layout_alignLeft="@+id/teacherName"
+            android:layout_alignRight="@+id/audioState"
+            android:layout_marginTop="5pt"
+            app:bsb_hide_bubble="true"
+            app:bsb_progress="0"
+            app:bsb_second_track_color="@color/agora_blue"
+            app:bsb_track_color="#A9A6A6" />
+
+
+        <ImageView
+            android:id="@+id/descriptionImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/seekBar"
+            android:layout_alignLeft="@+id/teacherName"
+            android:layout_alignRight="@+id/classDate"
+            android:layout_marginTop="26pt"
+            android:maxHeight="200pt"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#eee" />
+</LinearLayout>

@@ -1,0 +1,93 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 6
+        versionName "1.0.6"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.liulishuo.filedownloader:library:1.7.5'
+}
+
+
+/** 以下开始是将Android Library上传到jcenter的相关配置**/
+
+
+//项目主页
+def siteUrl = 'https://github.com/yangchong211/YCUpdateApp'    // project homepage
+//项目的版本控制地址
+def gitUrl = 'https://github.com/yangchong211/YCUpdateApp.git' // project git
+
+//发布到组织名称名字，必须填写
+group = "cn.yc"
+//发布到JCenter上的项目名字，必须填写
+def libName = "YCUpdateLib"
+// 版本号，下次更新是只需要更改版本号即可
+version = "1.0.6"
+/**  上面配置后上传至jcenter后的编译路径是这样的： compile 'cn.yc:YCUpdateLib:1.0.0'  **/
+
+//生成源文件
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+//生成文档
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    options.encoding "UTF-8"
+    options.charSet 'UTF-8'
+    options.author true
+    options.version true
+    options.links "https://github.com/linglongxin24/FastDev/tree/master/mylibrary/docs/javadoc"
+    failOnError false
+}
+
+//文档打包成jar
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+//拷贝javadoc文件
+task copyDoc(type: Copy) {
+    from "${buildDir}/docs/"
+    into "docs"
+}
+
+//上传到jcenter所需要的源码文件
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+
+
+
+javadoc {
+    options {
+        //如果你的项目里面有中文注释的话，必须将格式设置为UTF-8，不然会出现乱码
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+        links "http://docs.oracle.com/javase/7/docs/api"
+    }
+}
+
+

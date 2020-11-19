@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="io.agora.openlive.ui.LiveRoomActivity"
+             android:keepScreenOn="true">
+
+    <io.agora.openlive.ui.GridVideoViewContainer
+        android:id="@+id/grid_video_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ViewStub
+        android:id="@id/small_video_view_dock"
+        android:inflatedId="@id/small_video_view_dock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout="@layout/small_video_view_dock" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/channel_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="6dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@android:color/white" />
+
+        <io.agora.ui.AGLinearLayout
+            android:id="@+id/bottom_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_alignParentStart="true"
+            android:gravity="center_horizontal"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true">
+
+            <ImageView
+                android:id="@+id/bottom_action_end_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/btn_endcall" />
+
+        </io.agora.ui.AGLinearLayout>
+
+        <ImageView
+            android:id="@+id/switch_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="38dp"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/btn_record_camera" />
+
+    </RelativeLayout>
+</FrameLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="88pt"
+    android:background="@android:color/white"
+    app:contentInsetStart="0dp"
+    tools:ignore="ContentDescription">
+
+    <RelativeLayout
+        android:id="@+id/toolbar_back"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="start">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/back" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/color_333333"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="@string/app_name" />
+
+    <com.like.LikeButton
+        android:id="@+id/collectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="18pt"
+        android:minWidth="50pt"
+        android:minHeight="50pt"
+        android:visibility="gone"
+        app:anim_scale_factor="2"
+        app:circle_end_color="#F35C00"
+        app:circle_start_color="#F35C00"
+        app:dots_primary_color="#F35C00"
+        app:dots_secondary_color="#F35C00"
+        app:icon_size="15dp"
+        app:icon_type="Star"
+        app:is_enabled="true"
+        app:like_drawable="@drawable/icon_colect"
+        app:liked="false"
+        app:unlike_drawable="@drawable/icon_not_colet" />
+
+    <com.allen.library.SuperButton
+        android:id="@+id/signCourse"
+        android:layout_width="140pt"
+        android:layout_height="48pt"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="18pt"
+        android:text="未打卡"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:sCornersRadius="5dp"
+        app:sSelectorNormalColor="@color/agora_blue"
+        app:sUseSelector="true" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/rightTextView"
+        android:gravity="center"
+        android:layout_marginRight="18pt"
+        android:textSize="14sp"
+        android:textColor="@color/agora_blue"
+        android:text="一键已读"
+        android:layout_gravity="right|center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"/>
+
+</androidx.appcompat.widget.Toolbar>

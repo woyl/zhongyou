@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    tools:context="com.zhongyou.meet.mobile.business.HomeActivity">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_layout" />
+
+    <LinearLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/my_px_168"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal">
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:background="@color/transparent"
+                android:textColor="@drawable/home_below_selector_txt_color"
+                android:id="@+id/meeting"
+                style="@style/HomeTab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:checked="true"
+                android:drawableTop="@drawable/drawoble_meeting"
+                android:paddingTop="@dimen/my_px_14"
+                android:text="会议" />
+
+            <RadioButton
+                android:background="@color/transparent"
+                android:textColor="@drawable/home_below_selector_txt_color"
+                android:id="@+id/meeting_discuss"
+                style="@style/HomeTab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/drawoble_discuss"
+                android:paddingTop="@dimen/my_px_14"
+                android:text="讨论" />
+
+            <RadioButton
+                android:visibility="visible"
+                android:background="@color/transparent"
+                android:textColor="@drawable/home_below_selector_txt_color"
+                android:id="@+id/meeting_log"
+                style="@style/HomeTab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/drawoble_log"
+                android:paddingTop="@dimen/my_px_14"
+                android:text="新会话" />
+
+            <RadioButton
+                android:background="@color/transparent"
+                android:textColor="@drawable/home_below_selector_txt_color"
+                android:id="@+id/meeting_my"
+                style="@style/HomeTab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/drawoble_my"
+                android:paddingTop="@dimen/my_px_14"
+                android:text="我的" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+</RelativeLayout>

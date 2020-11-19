@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_base_title_tool_bar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/dp133"
+            android:background="@mipmap/contact_us" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp26"
+            app:layout_constraintTop_toBottomOf="@+id/img_head"
+            app:layout_constraintEnd_toStartOf="@+id/phoneNumber"
+            app:layout_constraintStart_toStartOf="@+id/img_head"
+            android:textColor="@color/color_666666"
+            android:text="联系电话:"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/phoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/tv_1"
+            android:text="400862028"
+            android:layout_marginStart="@dimen/dp10"
+            app:layout_constraintTop_toTopOf="@+id/tv_1"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_1"
+            app:layout_constraintEnd_toEndOf="@+id/img_head"
+            android:textColor="@color/agora_blue"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp15"
+            app:layout_constraintTop_toBottomOf="@+id/tv_1"
+            app:layout_constraintEnd_toStartOf="@+id/tv_name"
+            app:layout_constraintStart_toStartOf="@+id/img_head"
+            android:textColor="@color/color_666666"
+            android:text="微信公众号:"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/tv_2"
+            android:text="中幼在线教育"
+            android:layout_marginStart="@dimen/dp10"
+            app:layout_constraintTop_toTopOf="@+id/tv_2"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_2"
+            app:layout_constraintEnd_toEndOf="@+id/img_head"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp15"
+            app:layout_constraintTop_toBottomOf="@+id/tv_2"
+            app:layout_constraintEnd_toStartOf="@+id/wchat_num"
+            app:layout_constraintStart_toStartOf="@+id/img_head"
+            android:text="中幼在线_小助理:"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/wchat_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/tv_3"
+            android:text="zhongyouzaixian01"
+            android:drawableEnd="@mipmap/copy_us"
+            android:layout_marginStart="@dimen/dp10"
+            app:layout_constraintTop_toTopOf="@+id/tv_3"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_3"
+            app:layout_constraintEnd_toEndOf="@+id/img_head" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16pt"
+        android:visibility="gone"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16pt"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16pt"
+                android:text="1. 联系电话"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/phoneNumber_old"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80pt"
+                android:text="4008620628"
+                android:textColor="@color/agora_blue"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16pt"
+            android:layout_marginTop="16pt"
+            android:text="2. 小助理微信"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/weChat"
+            android:layout_width="400pt"
+            android:layout_height="400pt"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="16pt"
+            android:src="@drawable/xiaozhuli" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16pt"
+            android:layout_marginTop="16pt"
+            android:text="3. 中幼在线公众号"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/gongZhongHao"
+            android:layout_width="400pt"
+            android:layout_height="400pt"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="16pt"
+            android:src="@drawable/gongzhonghao" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30pt"
+            android:gravity="center_horizontal"
+            android:text="点击二维码图片可保存到相册"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="150pt"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/videoName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_marginTop="10pt"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        tools:text="直播页面" />
+
+
+    <com.like.LikeButton
+        android:id="@+id/collectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="298pt"
+        android:layout_marginTop="11pt"
+        android:minWidth="50pt"
+        android:minHeight="50pt"
+        app:anim_scale_factor="2"
+        app:circle_end_color="#F35C00"
+        app:circle_start_color="#F35C00"
+        app:dots_primary_color="#F35C00"
+        app:dots_secondary_color="#F35C00"
+        app:icon_size="15dp"
+        app:icon_type="Star"
+        app:is_enabled="true"
+        app:like_drawable="@drawable/icon_colect"
+        app:liked="false"
+        app:unlike_drawable="@drawable/icon_not_colet" />
+
+    <RelativeLayout
+        android:id="@+id/needBuyCourseLayout"
+        android:layout_width="match_parent"
+        android:layout_height="150pt"
+        android:background="@drawable/maker_course_need_buy_cover"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon_buy5" />
+    </RelativeLayout>
+
+</RelativeLayout>

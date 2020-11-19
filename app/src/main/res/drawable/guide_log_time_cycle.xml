@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/guide_log_time_cycle_today"  android:state_enabled="true"/>
+    <item android:drawable="@drawable/guide_log_time_cycle_history"  />
+</selector>

@@ -1,0 +1,54 @@
+<cn.bingoogolapple.transformerstip.view.TransformersTipLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    app:ad_arrowExtraOffsetX="0dp"
+    app:ad_arrowExtraOffsetY="0dp"
+    app:ad_arrowGravity="to_bottom_center"
+    app:ad_arrowHeight="6dp"
+    app:ad_bgColor="@color/white"
+    app:ad_radius="4dp"
+    app:ad_shadowColor="#33000000"
+    app:ad_shadowSize="6dp">
+
+    <Button
+        android:id="@+id/not_full_screen"
+        android:background="@drawable/bg_search_button_selector1"
+        android:gravity="center"
+        android:layout_width="@dimen/my_px_250"
+        android:layout_height="wrap_content"
+        android:text="非全屏"
+        android:textColor="@drawable/bg_search_button_text_selector"/>
+
+    <View
+        android:background="@color/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <Button
+        android:id="@+id/full_screen"
+        android:background="@drawable/bg_search_button_selector2"
+        android:gravity="center"
+        android:layout_width="@dimen/my_px_250"
+        android:layout_height="wrap_content"
+        android:text="全屏"
+        android:textColor="@drawable/bg_search_button_text_selector" />
+    <View
+        android:background="@color/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <Button
+        android:id="@+id/clearAll"
+        android:background="@drawable/bg_search_button_selector3"
+        android:gravity="center"
+        android:layout_width="@dimen/my_px_250"
+        android:layout_height="wrap_content"
+        android:text="隐藏浮窗"
+        android:textColor="@drawable/bg_search_button_text_selector" />
+
+
+</cn.bingoogolapple.transformerstip.view.TransformersTipLinearLayout>

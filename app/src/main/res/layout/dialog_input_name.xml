@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="570pt"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/list_item_background">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="100pt"
+            android:gravity="center"
+            android:text="请输入昵称"
+            android:textColor="@android:color/black"
+            android:textSize="22sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/title"
+            android:background="#ccc" />
+
+        <EditText
+            android:id="@+id/userNickNameInput"
+            android:layout_width="match_parent"
+            android:layout_height="80pt"
+            android:layout_below="@+id/title"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="16pt"
+            android:layout_marginTop="40pt"
+            android:layout_marginRight="16pt"
+            android:background="@drawable/input_user_name"
+            android:hint="请输入昵称"
+            android:maxLength="8"
+            android:paddingLeft="16pt"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/userNickNameInput"
+            android:layout_marginTop="40pt"
+            android:background="#ccc" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100pt"
+            android:layout_below="@+id/line">
+
+            <TextView
+                android:id="@+id/close"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="取消"
+                android:textSize="16sp" />
+
+            <View
+                android:id="@+id/button_line"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="14pt"
+                android:layout_marginBottom="14pt"
+                android:background="#ccc" />
+
+            <TextView
+                android:id="@+id/update"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="更改"
+                android:textColor="@color/agora_blue"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

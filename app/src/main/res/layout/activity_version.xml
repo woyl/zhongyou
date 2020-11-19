@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f9f9f9"
+    android:orientation="vertical"
+    >
+    <include layout="@layout/include_base_title_tool_bar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_margin="@dimen/dp12">
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/label_version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp12"
+            android:text="已有新版本：中幼在线V1.0.1"/>
+
+        <com.allen.library.SuperButton
+            app:sCornersRadius="10dp"
+            app:sSelectorDisableColor="#ccc"
+            app:sSelectorNormalColor="@color/agora_blue"
+            app:sUseSelector="true"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:id="@+id/bt_update"
+            android:layout_marginTop="@dimen/dp12"
+            android:layout_width="match_parent"
+            android:layout_height="60pt"
+            android:layout_marginBottom="@dimen/dp12"
+            android:background="@drawable/setting_button_circle_blue_enable"
+            android:text="立即更新"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+</LinearLayout>

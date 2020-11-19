@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_head"
+        android:layout_marginTop="@dimen/dp15"
+        android:layout_width="@dimen/dp55"
+        android:layout_height="@dimen/dp55"
+        android:scaleType="fitXY"
+        tools:background="@drawable/item_forum_img_loading"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/img_head"
+        app:layout_constraintTop_toTopOf="@+id/img_head"
+        app:layout_constraintEnd_toStartOf="@+id/fl_aniu"
+        android:textSize="16sp"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginStart="5dp"
+        tools:text="报！大咖有哦话说"
+        android:textColor="@color/gray_333333"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_content"
+        app:layout_constraintStart_toEndOf="@+id/img_head"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintBottom_toTopOf="@+id/tv_name"
+        app:layout_constraintEnd_toStartOf="@+id/fl_aniu"
+        android:layout_width="0dp"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        tools:text="幼儿园招收时如何吸引家长？"
+        android:layout_marginStart="@dimen/dp5"
+        android:textSize="14sp"
+        android:textColor="@color/gray_333333"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_name"
+        app:layout_constraintStart_toEndOf="@+id/img_head"
+        app:layout_constraintBottom_toBottomOf="@+id/img_head"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp5"
+        tools:text="主持人：招收工作"
+        android:textSize="12sp"
+        android:textColor="@color/color_999999"
+        tools:ignore="MissingConstraints" />
+
+    <FrameLayout
+        android:id="@+id/fl_aniu"
+        android:layout_width="@dimen/dp33"
+        android:layout_height="@dimen/dp33"
+        android:layout_marginEnd="@dimen/dp11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/img_head"
+        app:layout_constraintBottom_toBottomOf="@id/img_head">
+
+
+<!--        <com.zhongyou.meet.mobile.view.CircularProgressView-->
+<!--            android:id="@+id/circle_progress"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            app:backColor="@color/blue_44A2FC"-->
+<!--            app:backWidth="@dimen/dp2"-->
+<!--            app:progColor="@color/red"-->
+<!--            app:progWidth="@dimen/dp3"/>-->
+        <com.zhongyou.meet.mobile.view.CompletedProgressView
+            android:id="@+id/circle_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:circleColor="@color/transparent"
+            app:radius="@dimen/dp13"
+            android:layout_gravity="center"
+            app:ringBgColor="@color/cbfcdde"
+            app:ringColor="@color/c3a8ae6"
+            app:strokeWidth="@dimen/dp2"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_play_button"
+            android:layout_gravity="center"
+            android:layout_width="@dimen/dp15"
+            android:layout_height="@dimen/dp15"
+            android:src="@mipmap/pause_music"/>
+
+<!--        <androidx.appcompat.widget.AppCompatImageView-->
+<!--            android:id="@+id/img_play"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:src="@mipmap/reycler_play"-->
+<!--            tools:background="@mipmap/reycler_play"-->
+<!--            tools:ignore="MissingConstraints" />-->
+
+    </FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/descriptionImage"
+        app:layout_constraintTop_toBottomOf="@+id/img_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26pt"
+        android:maxHeight="200pt"
+        android:visibility="gone"
+        tools:background="@drawable/item_forum_img_loading"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

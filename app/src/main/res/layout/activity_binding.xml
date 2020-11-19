@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".business.HomeActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp15"
+            android:background="@mipmap/back"/>
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/dp230"
+            android:layout_height="@dimen/dp100"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp60"
+            android:src="@drawable/logo_2" />
+
+
+        <LinearLayout
+            android:id="@+id/phoneLoginLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:visibility="visible">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="27pt"
+                android:layout_marginTop="40pt"
+                android:layout_marginRight="27pt"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/white_conner"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="125pt"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12pt"
+                            android:src="@drawable/dh" />
+
+                        <EditText
+                            android:id="@+id/txt_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:digits="0123456789"
+                            android:hint="@string/txt_phone"
+                            android:inputType="number"
+                            android:paddingLeft="9pt"
+                            android:paddingRight="9pt"
+                            android:singleLine="true"
+                            android:textSize="@dimen/sp15" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp1"
+                        android:background="@color/color_e0e0e0" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="125pt"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="12pt"
+                                android:src="@drawable/yzm" />
+
+                            <EditText
+                                android:id="@+id/txt_code"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:hint="@string/txt_code"
+                                android:inputType="number"
+                                android:paddingLeft="9pt"
+                                android:paddingRight="9pt"
+                                android:singleLine="true"
+                                android:textSize="@dimen/sp15" />
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/bt_getcode_text"
+                            android:layout_width="200pt"
+                            android:layout_height="60pt"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="@dimen/dp23"
+                            android:background="@drawable/button_y_circle"
+                            android:gravity="center"
+                            android:text="@string/bt_getcode_text"
+                            android:textColor="@color/color_4095e8"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginTop="20pt"
+                    android:layout_marginRight="@dimen/my_px_80">
+
+                    <CheckBox
+                        android:id="@+id/check_old"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp" />
+
+                    <TextView
+                        android:id="@+id/hint_old"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/check_old"
+                        android:gravity="center"
+                        android:text="点击同意"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/argment_old"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/hint_old"
+                        android:gravity="center"
+                        android:text='《"中幼在线"用户服务协议》'
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15">
+
+                    <ImageView
+                        android:id="@+id/check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp5"
+                        android:visibility="gone"
+                        android:layout_centerVertical="true"
+                        android:scaleType="center"
+                        android:src="@drawable/icon_check" />
+
+                    <TextView
+                        android:id="@+id/hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dp2"
+                        android:layout_toEndOf="@+id/check"
+                        android:textColor="@color/color_333333"
+                        android:gravity="center"
+                        android:text="登录即表示同意"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/argment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/hint"
+                        android:gravity="center"
+                        android:text='《用户协议》'
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/tv_he"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/argment"
+                        android:textColor="@color/color_333333"
+                        android:textSize="10sp"
+                        android:text="和" />
+
+                    <TextView
+                        android:id="@+id/argmentPrivate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/tv_he"
+                        android:gravity="center"
+                        android:text='《隐私政策》'
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="10sp" />
+                </RelativeLayout>
+
+                <com.allen.library.SuperButton
+                    android:id="@+id/bt_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp27"
+                    android:layout_marginTop="10pt"
+                    android:layout_marginRight="@dimen/dp27"
+                    android:text="绑定手机号"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp16"
+                    android:visibility="visible"
+                    app:sCornersRadius="10dp"
+                    app:sSelectorNormalColor="@color/agora_blue"
+                    app:sSelectorPressedColor="@color/gray"
+                    app:sUseSelector="true" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>

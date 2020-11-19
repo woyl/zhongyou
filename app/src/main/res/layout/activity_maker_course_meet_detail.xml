@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_base_title_tool_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16pt"
+                android:background="@color/white"
+                android:gravity="center"
+                android:paddingTop="10pt"
+                android:paddingBottom="10pt"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:text="aaaaa" />
+
+            <ImageView
+                android:id="@+id/topImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="20pt">
+
+                <com.allen.library.SuperButton
+                    android:id="@+id/enterMeeting"
+                    android:layout_width="match_parent"
+                    android:layout_height="80pt"
+                    android:layout_marginLeft="32pt"
+                    android:layout_marginRight="32pt"
+                    android:text="点击进入直播间"
+                    android:textColor="@color/white"
+                    app:sCornersRadius="10dp"
+                    app:sSolidColor="@color/agora_blue" />
+
+
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:layout_marginTop="16pt"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:background="@color/white"
+                    android:scaleType="fitXY" />
+
+                <com.github.lzyzsd.circleprogress.CircleProgress
+                    android:id="@+id/circle_progress"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    custom:circle_max="100"
+                    custom:circle_progress="0" />
+
+                <io.rong.subscaleview.SubsamplingScaleImageView
+
+                    android:id="@+id/descriptionImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

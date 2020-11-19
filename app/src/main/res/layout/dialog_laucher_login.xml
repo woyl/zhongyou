@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp18"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/rounded_edittext">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp16"
+        android:textSize="18sp"
+        android:textColor="@color/color_333333"
+        android:textStyle="bold"
+        android:text="温馨提示"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/dp10"
+        android:textColor="@color/color_333333"
+        android:text="欢迎使用中幼在线!为了更好地保护您的权益,同时遵守相关监管要求,特此向您说明如下:
+        \n\n&#160;&#160;&#160;&#160;&#160;&#160;&#160;1.为向您提供基本服务,我们会遵循正当、合法、必要的原则收集、使用必要的信息;
+        \n\n&#160;&#160;&#160;&#160;&#160;&#160;&#160;2.摄像头、麦克风、定位不会默认开启,只有经过您明示授权后才会为实现某项功能或服务时使用;
+        \n\n&#160;&#160;&#160;&#160;&#160;&#160;&#160;3.未经您的同意,我们不会从第三方获取、共享或对外提供您的个人信息;
+        \n\n&#160;&#160;&#160;&#160;&#160;&#160;&#160;4.您可以在相关页面访问、更改您的个人信息或管理您的授权;  "/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/dp10"
+        android:textSize="16sp"
+        android:textColor="@color/color_333333"
+        android:textStyle="bold" />
+
+    <com.allen.library.SuperButton
+        android:id="@+id/bt_agree"
+        app:layout_constraintTop_toBottomOf="@+id/tv_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp36"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_marginStart="@dimen/dp51"
+        android:layout_marginEnd="@dimen/dp51"
+        android:text="同意并继续"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp14"
+        android:visibility="visible"
+        app:sCornersRadius="5dp"
+        app:sSelectorNormalColor="@color/c3A8CE8"
+        app:sSelectorPressedColor="@color/gray"
+        app:sUseSelector="true" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_no_agree"
+        app:layout_constraintTop_toBottomOf="@+id/bt_agree"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_999999"
+        android:text="不同意"
+        android:textSize="12sp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

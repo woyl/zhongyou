@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/inputLayout"
+        android:layout_marginLeft="@dimen/my_px_135"
+        android:minHeight="@dimen/my_px_492"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recy_chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/inputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/my_px_135"
+        android:layout_marginRight="@dimen/my_px_45"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edit"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/my_px_126"
+                android:layout_weight="7"
+                android:background="@drawable/white_conner"
+                android:imeOptions="actionSend"
+                android:maxLength="500"
+                android:paddingLeft="@dimen/my_px_10"
+                android:singleLine="true"
+                android:textColor="#909090" />
+
+            <TextView
+                android:id="@+id/tv_send"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/my_px_126"
+                android:layout_marginLeft="@dimen/my_px_36"
+                android:layout_marginTop="-1dp"
+                android:layout_weight="1"
+                android:background="@drawable/red_conner"
+                android:gravity="center"
+                android:padding="@dimen/my_px_30"
+                android:text="发送"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/my_px_45" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_px_45"></LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

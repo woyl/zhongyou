@@ -1,0 +1,95 @@
+<resources>
+    <string name="app_name">zhongyou</string>
+
+    <string name="label_meet_desc">Meeting summary：</string>
+    <string name="label_meet_time">start time：</string>
+    <string name="label_meet_class">Meeting types：</string>
+    <string name="label_meet_info">Meeting data</string>
+
+    <string name="bt_login">Login</string>
+    <string name="bt_bind">Bind</string>
+    <string name="bt_getcode_text">Get Code</string>
+    <string name="bt_login_other">Third party login mode</string>
+    <string name="bt_confirm">confirm</string>
+    <string name="bt_cancel">cancel</string>
+    <string name="bt_not_prompt">Never notify</string>
+    <string name="bt_save">save</string>
+    <string name="bt_exit">quit</string>
+    <string name="bt_update">upgrade now</string>
+    <string name="bt_later">Talk later</string>
+    <string name="bt_leave">leave the chair</string>
+    <string name="bt_leave_stand">Leave temporarily</string>
+    <string name="bt_meet_discuss">Discuss</string>
+    <string name="bt_send">Send</string>
+    <string name="bt_close">Close</string>
+    <string name="bt_refresh">Refresh</string>
+    <string name="bt_qrcode_login">WeChat QR code Sign in</string>
+    <string name="bt_apply">Apply</string>
+    <string name="bt_agree">Agree</string>
+    <string name="bt_refuse">Refuse</string>
+    <string name="bt_micro">Connect Microphone</string>
+    <string name="bt_micro_off">Close Microphone</string>
+    <string name="bt_camera">Open Camera</string>
+    <string name="bt_camera_off">Close Camera</string>
+    <string name="bt_leave2">Leave</string>
+    <string name="bt_later2">Later</string>
+    <string name="bt_goto">Go at once</string>
+    <string name="alt_sdk_disabled">Extension Card Not Available</string>
+
+    <string name="txt_phone">Phone number</string>
+    <string name="txt_code">Verification Code</string>
+    <string name="txt_bind_title">Binding WeChat</string>
+    <string name="txt_bind_alert">After binding, it is more convenient to log in without entering the password of the mobile phone number.</string>
+    <string name="txt_started">Not started</string>
+    <string name="txt_raged">Carried out</string>
+    <string name="meet_state_complete">complete</string>
+
+    <string name="bar_online">online</string>
+    <string name="bar_offline">offline</string>
+    <string name="bar_log">Record</string>
+    <string name="bar_meet">Meeting</string>
+    <string name="bar_search">search</string>
+    <string name="bar_profile">My</string>
+
+    <string name="label_nickname">Nickname</string>
+    <string name="label_user_name">Name</string>
+    <string name="label_meet_users">Number of participants</string>
+    <string name="label_quit_alert">Are you sure you want to leave the meeting room?</string>
+    <string name="label_hot_city">Hot Cities</string>
+    <string name="label_sync_loading">Downloading the upgrade package...</string>
+    <string name="alt_update">%1$s%2$sVersion released。\r\nWhether to upgrade to the latest edition immediately？</string>
+    <string name="alt_upgrade_down_error">Download failed, please try again later。</string>
+    <string name="alt_upgrade_down_loading">Download the upgrade package, please wait a moment...</string>
+    <string name="alt_list_loading">Loading data, please wait a moment...</string>
+    <string name="alt_create_file_fail">Failed to create file</string>
+    <string name="alt_message_null">Unable to publish empty messages</string>
+    <string name="dlg_title">Reminder</string>
+    <string name="dlg_apply_call">Apply call</string>
+    <string name="dlg_apply_vide">Apply video</string>
+    <string name="dlg_apply_call_desc">You do not have the right to communicate, you need to apply to the moderator!</string>
+    <string name="dlg_apply_video_desc">You do not have the right to video interaction, you need to apply to the host!</string>
+    <string name="dlg_apply_call_success">The application has been sent. Please wait for the authorization of the host.</string>
+    <string name="dlg_apply_call_error">Failure to send application</string>
+    <string name="dlg_participand_title">All participants</string>
+    <string name="dlg_repeat_click_flag">Do not repeat your praise</string>
+    <string name="dlg_meet_finish">The meeting is over. Do you understand leaving？</string>
+    <string name="dlg_not_network">The network is disconnected. Please try again later.</string>
+    <string name="dlg_edit_userinfo">Do you want to edit detailed personal data?</string>
+    <string name="dlg_exception">There was a mistake in the procedure.</string>
+
+    <string name="label_noth_meet">No relevant meetings</string>
+    <string name="label_order_news">News</string>
+    <string name="label_order_hot">Hos</string>
+    <string name="label_order_flag">Flag</string>
+
+    <string name="dialog_title_settings">Resolution setting</string>
+    <string name="label_video_fluent">fluent（480*360）</string>
+    <string name="label_video_standard">standard（640*480）</string>
+    <string name="label_video_high">high（1280*720）</string>
+
+    <string name="account_offline">Connection lost</string>
+    <string name="account_reason_login">Another user is entering the discussion area with the same user ID</string>
+
+    <string name="wx_appid">wx9a61fda9d6d2e0fb</string>
+    <string name="wx_appsecret">797101d28f353fc581cd05421b251cde</string>
+</resources>

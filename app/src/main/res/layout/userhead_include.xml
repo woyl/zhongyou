@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/purple_811fcd" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/home_head_bg">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/mIvHead"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/baby_default_avatar"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="2dp"
+
+                />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/mTvState"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/userinfo_set_state_offline_bg_shape"
+            android:gravity="center"
+            android:text="在线状态"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_home_record" />
+
+            <TextView
+                android:id="@+id/mTvM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="分钟"
+                android:textColor="@color/text_gray_909090"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/mTvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/mTvM"
+                android:textColor="@color/text_yellow_ff9c00"
+                android:textSize="15sp"
+                tools:text="123456" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/mTvTime"
+                android:text="累计"
+                android:textColor="@color/text_gray_909090"
+                android:textSize="15sp" />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</layout>

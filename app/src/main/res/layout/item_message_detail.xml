@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/dp15"
+    android:id="@+id/fl_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.zhongyou.meet.mobile.view.SwipeView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_phone_login_fillet_bg_normal">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/dp10">
+            <TextView
+                android:layout_marginTop="@dimen/dp5"
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="云教室邀请提醒" />
+
+
+            <TextView
+                android:id="@+id/meetingName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_marginTop="@dimen/dp10"
+                android:ellipsize="end"
+                android:text="会议名称:让环创更具美感"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:id="@+id/sendTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/meetingName"
+                android:layout_marginTop="@dimen/dp18"
+                android:text="2020-08-12"
+                android:textSize="12sp" />
+
+            <com.allen.library.SuperButton
+                android:id="@+id/checkClass"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp25"
+                android:layout_alignBaseline="@+id/sendTime"
+                android:layout_alignParentEnd="true"
+                android:paddingLeft="@dimen/dp10"
+                android:paddingRight="@dimen/dp10"
+                android:text="立即查看"
+                android:textColor="@color/white"
+                app:sCornersRadius="5dp"
+                app:sSelectorDisableColor="#ccc"
+                app:sSelectorNormalColor="@color/agora_blue"
+                app:sShapeType="rectangle"
+                app:sUseSelector="true" />
+
+
+            <com.zhongyou.meet.mobile.view.CircleImageView
+                android:id="@+id/readTag"
+                android:layout_alignParentEnd="true"
+                android:src="@color/red"
+                android:layout_width="@dimen/dp10"
+                android:layout_height="@dimen/dp10"/>
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp10"
+                android:src="@drawable/meet_notify"
+                android:visibility="gone" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/dp7"
+                android:layout_marginEnd="@dimen/dp20"
+                android:layout_toEndOf="@+id/imageView"
+                android:paddingStart="@dimen/dp13"
+                android:paddingTop="@dimen/dp15"
+                android:paddingEnd="@dimen/dp8"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开课了，赶快参与吧"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/dp12"
+                    android:paddingBottom="@dimen/dp8"
+                    android:text="2020/4/4"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_usb_delete"
+            android:layout_width="@dimen/dp100"
+            android:layout_height="@dimen/dp115"
+            android:background="@color/red"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="#ffffff"
+            android:textSize="18sp"/>
+    </com.zhongyou.meet.mobile.view.SwipeView>
+
+</FrameLayout>

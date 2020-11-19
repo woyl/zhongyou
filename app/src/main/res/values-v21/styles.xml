@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="WhiteEdittext">
+        <item name="android:textSize">@dimen/my_px_43</item>
+        <item name="android:colorControlNormal">@color/white</item>
+        <item name="android:textColorHint">@color/purple_B07EDA</item>
+    </style>
+
+</resources>

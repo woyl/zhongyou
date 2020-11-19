@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_radius_dialog"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="16dp">
+
+
+    <ImageView
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginStart="@dimen/my_px_130"
+        android:layout_marginLeft="@dimen/my_px_130"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:src="@mipmap/x"
+        android:visibility="gone" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20pt"
+        android:text="请输入加入码"
+        android:textColor="@color/black"
+        android:textSize="@dimen/my_sp_46"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/code"
+        android:layout_width="@dimen/my_px_821"
+        android:layout_height="@dimen/my_px_115"
+        android:layout_marginStart="@dimen/my_px_66"
+        android:layout_marginLeft="@dimen/my_px_66"
+        android:layout_marginTop="@dimen/my_px_45"
+        android:layout_marginEnd="@dimen/my_px_66"
+        android:layout_marginRight="@dimen/my_px_66"
+        android:background="@drawable/bg_radius_edittext"
+        android:focusable="true"
+        android:inputType="number"
+        android:paddingLeft="@dimen/my_px_32"
+        android:paddingTop="@dimen/my_px_24"
+        android:paddingRight="@dimen/my_px_32"
+        android:paddingBottom="@dimen/my_px_26"
+        android:textSize="20sp">
+
+    </EditText>
+
+    <ImageView
+        android:id="@+id/dialog_meeting_warnning"
+        android:layout_width="@dimen/my_px_29"
+        android:layout_height="@dimen/my_px_29"
+        android:layout_marginTop="@dimen/my_px_52"
+        android:src="@drawable/dialog_red_warnning"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/code"
+        app:layout_constraintTop_toBottomOf="@+id/code" />
+
+
+    <TextView
+        android:id="@+id/dialog_meeting_warnning_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/my_px_85"
+        android:layout_marginTop="@dimen/my_px_43"
+        android:layout_marginRight="@dimen/my_px_85"
+        android:text="将要开启实况模式，将实时拍摄您的参会场景并上传至主持人端"
+        android:textColor="@color/c_f62c64"
+        android:textSize="@dimen/my_sp_35"
+        android:visibility="gone" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/audienceConfirm"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/my_px_101"
+            android:layout_marginLeft="@dimen/my_px_100"
+            android:layout_marginTop="@dimen/my_px_36"
+            android:layout_marginRight="@dimen/my_px_100"
+            android:layout_weight="1"
+            android:background="@drawable/btn_shap_blue"
+            android:text="观众加入"
+            android:textColor="@color/white"
+            android:textSize="@dimen/my_sp_43"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/cancelDialog"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/my_px_101"
+            android:layout_marginLeft="@dimen/my_px_100"
+            android:layout_marginTop="@dimen/my_px_36"
+            android:layout_marginRight="@dimen/my_px_100"
+            android:layout_weight="1"
+            android:background="@drawable/btn_shap_blue"
+            android:text="取消"
+            android:textColor="@color/white"
+            android:textSize="@dimen/my_sp_43" />
+
+        <Button
+            android:id="@+id/confirm"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/my_px_101"
+            android:layout_marginLeft="@dimen/my_px_100"
+            android:layout_marginTop="@dimen/my_px_36"
+            android:layout_marginRight="@dimen/my_px_100"
+            android:layout_weight="1"
+            android:background="@drawable/btn_shap_blue"
+            android:text="@string/sure"
+            android:textColor="@color/white"
+            android:textSize="@dimen/my_sp_43" />
+    </LinearLayout>
+
+
+</LinearLayout>

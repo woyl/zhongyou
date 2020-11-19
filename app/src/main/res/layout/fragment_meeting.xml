@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/meeting_fragment_head" />
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/id_coordinatorlayout_appbar_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:elevation="0dp">
+
+            <cn.bingoogolapple.bgabanner.BGABanner
+                android:id="@+id/banner_guide_content"
+                android:layout_width="match_parent"
+                android:layout_height="300pt"
+                app:banner_indicatorGravity="right"
+                app:banner_tipTextSize="16sp"
+                app:banner_numberIndicatorTextSize="18sp"
+                app:banner_pageChangeDuration="800"
+                app:banner_pointAutoPlayAble="true"
+                app:banner_pointAutoPlayInterval="5000"
+                app:banner_pointContainerBackground="#88aaaaaa"
+                app:banner_pointContainerLeftRightPadding="24pt"
+                app:banner_pointDrawable="@drawable/bga_banner_selector_point_hollow"
+                app:banner_pointLeftRightMargin="10pt"
+                app:banner_pointTopBottomMargin="18pt"
+                app:banner_transitionEffect="depth"
+                app:layout_scrollFlags="scroll|enterAlwaysCollapsed" />
+
+            <com.xj.marqueeview.MarqueeView
+                android:layout_marginTop="10pt"
+                android:background="@color/white"
+                app:mvGravity="center"
+                android:id="@+id/marqueeView"
+                android:layout_width="match_parent"
+                android:layout_height="68pt"
+                app:mvAnimDuration="500"
+                app:mvInterval="3000" />
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/mSwipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:cacheColorHint="@null"
+                android:scrollbars="none" />
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+        <TextView
+            android:id="@+id/emptyView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:drawableTop="@drawable/c"
+            android:drawablePadding="8dp"
+            android:gravity="center_horizontal"
+            android:text="空空如也"
+            android:textColor="#909090"
+            android:textSize="15sp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <FrameLayout
+            android:id="@+id/start_meeting"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:layout_gravity="bottom|right"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_send"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="发起会议"
+                android:textColor="#F62C64"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</LinearLayout>

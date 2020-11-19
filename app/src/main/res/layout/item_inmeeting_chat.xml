@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ProgressBar
+                android:id="@+id/send_bar"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+            <TextView
+                android:id="@+id/send_sate"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@mipmap/msg_error"
+                android:layout_marginRight="@dimen/my_px_20"
+                android:visibility="gone"
+                />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/my_px_45"
+            android:textColor="#ffffff"/>
+        <TextView
+            android:id="@+id/tv_addres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff000"
+            android:gravity="center"
+            android:textSize="@dimen/my_px_27"
+            android:visibility="gone"
+
+            android:paddingLeft="@dimen/my_px_20"
+            android:paddingRight="@dimen/my_px_20"
+            android:paddingTop="@dimen/my_px_5"
+            android:paddingBottom="@dimen/my_px_5"
+            android:background="@drawable/yellow_corner"/>
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/my_px_45"
+            android:textColor="#ffffff"/>
+        <ImageView
+            android:id="@+id/img_content"
+            android:layout_marginLeft="@dimen/my_px_20"
+            android:layout_width="@dimen/my_px_331"
+            android:layout_height="@dimen/my_px_196" />
+    </LinearLayout>
+</RelativeLayout>

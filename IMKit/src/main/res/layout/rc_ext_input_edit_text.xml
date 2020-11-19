@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_centerVertical="true"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="2dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:layout_marginStart="2dp">
+
+        <EditText
+            android:id="@+id/rc_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/item_edit"
+            android:maxLines="4"
+            android:paddingTop="3dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:textSize="16sp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="40dp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/rc_emoticon_toggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="10dp"
+        android:visibility="gone"
+        android:src="@drawable/rc_emotion_toggle_selector"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="10dp" />
+
+    <FrameLayout
+        android:id="@+id/rc_send_toggle"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/rc_send_toggle_selector"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:layout_marginStart="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/rc_ext_send"
+            android:textColor="#ffffff"
+            android:textSize="12sp" />
+    </FrameLayout>
+</LinearLayout>

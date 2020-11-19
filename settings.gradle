@@ -1,0 +1,2 @@
+include ':floatwindow'
+include ':app', ':IosDialog', ':test', ':MeetingCamera', ':photolib', ':YCUpdateLib', ':vlayout', ':anglePop', ':jjdxm-ijkplayer', ':citypicker', ':jiaozivideoplayer', ':arms', ':IMLib', ':IMKit', ':whiteboard','dialog'

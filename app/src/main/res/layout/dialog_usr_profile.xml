@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="506pt">
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/operaTools"
+        android:layout_width="match_parent"
+        android:layout_height="78pt"
+        app:sBackgroundDrawableRes="@android:color/white"
+        app:sDividerLineColor="#ccc"
+        app:sDividerLineType="bottom"
+        app:sLeftTextColor="@android:color/black"
+        app:sLeftTextSize="18sp"
+        app:sLeftTextString="取消"
+        app:sRightTextColor="@android:color/black"
+        app:sRightTextSize="18sp"
+        app:sRightTextString="确定" />
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="106pt"
+        android:layout_below="@+id/operaTools"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:paddingLeft="20pt"
+            android:textColor="@color/agora_blue"
+            android:id="@+id/userWorkPlace"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10pt"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            tools:text="幼儿园用户" />
+
+        <TextView
+            android:textColor="@color/agora_blue"
+            android:id="@+id/workPlaceName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10pt"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="请输入单位"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/teacherName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10pt"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="教师"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/linear"
+        android:background="#ccc" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/line"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/userWorkPlaceRecyclerView"
+            android:layout_width="266pt"
+            android:layout_height="match_parent"
+            android:minHeight="200pt" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#ccc" />
+
+        <EditText
+            android:id="@+id/inputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="top"
+            android:hint="请输入幼儿园名称……"
+            android:padding="20pt"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</RelativeLayout>
+

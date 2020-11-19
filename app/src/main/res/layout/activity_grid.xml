@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".business.GridActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_px_160"
+            android:background="@color/colorPrimary"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/mIvLeft"
+                style="@style/Widget.AppCompat.ActionButton"
+                android:layout_width="@dimen/my_px_200"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:scaleType="center"
+                android:src="@drawable/select_back_btn" />
+
+            <TextView
+                android:id="@+id/mTvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="选择网格"
+                android:textColor="@color/white"
+                android:textSize="@dimen/my_sp_48" />
+
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/lvGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+            tools:layout_editor_absoluteX="8dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:stv="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/meeting_fragment_my_head" />
+
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.allen.library.SuperTextView
+                    android:id="@+id/userInfoTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="154pt"
+                    android:layout_marginTop="16pt"
+                    app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+                    app:sBackgroundDrawableRes="@color/white"
+                    stv:sLeftBottomTextSize="16sp"
+                    stv:sLeftBottomTextString="中幼分子公司"
+                    stv:sLeftIconHeight="110pt"
+                    stv:sLeftIconRes="@drawable/tx"
+                    stv:sLeftIconShowCircle="true"
+                    stv:sLeftIconWidth="110pt"
+                    stv:sLeftTextColor="@android:color/black"
+                    stv:sLeftTextSize="20sp"
+                    stv:sLeftTextString="张可良"
+                    stv:sLeftViewGravity="left_center"
+                    stv:sRightIconHeight="45pt"
+                    stv:sRightIconRes="@drawable/more"
+                    stv:sRightIconWidth="27pt" />
+
+                <com.allen.library.SuperTextView
+                    android:id="@+id/my_meeting"
+                    android:layout_width="match_parent"
+                    android:layout_height="76pt"
+                    android:layout_marginTop="17pt"
+                    app:sBackgroundDrawableRes="@color/white"
+                    app:sDividerLineColor="#eee"
+                    app:sDividerLineHeight="1dp"
+                    app:sDividerLineType="bottom"
+                    app:sLeftTextString="我的教室"
+                    app:sRightIconRes="@drawable/icon_expand"
+                    app:sRightViewMarginRight="0dp"
+                    stv:sLeftTextColor="@android:color/black"
+                    stv:sLeftTextSize="18sp" />
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/my_meeting_expandableLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    app:el_duration="300"
+                    app:el_expanded="true">
+
+                    <TextView
+                        android:visibility="gone"
+                        android:id="@+id/noCollectionDataView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="16pt"
+                        android:drawableTop="@drawable/no_data"
+                        android:drawablePadding="6pt"
+                        android:gravity="center"
+                        android:text="暂无数据" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/myMeetingRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+
+                <com.allen.library.SuperTextView
+                    android:id="@+id/my_sign"
+                    android:layout_width="match_parent"
+                    android:layout_height="76pt"
+                    android:layout_marginTop="17pt"
+                    app:sBackgroundDrawableRes="@color/white"
+                    app:sDividerLineColor="#eee"
+                    app:sDividerLineHeight="1dp"
+                    app:sDividerLineType="bottom"
+                    app:sLeftTextString="我的创客"
+                    app:sRightIconRes="@drawable/icon_expand"
+                    app:sRightViewMarginRight="0dp"
+                    stv:sLeftTextColor="@android:color/black"
+                    stv:sLeftTextSize="18sp" />
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/my_sign_expandableLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    app:el_duration="300"
+                    app:el_expanded="true">
+
+                    <TextView
+                        android:visibility="gone"
+                        android:id="@+id/noSignDataView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="16pt"
+                        android:drawableTop="@drawable/no_data"
+                        android:drawablePadding="6pt"
+                        android:gravity="center"
+                        android:text="暂无数据" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mySignRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+                <com.allen.library.SuperTextView
+                    android:id="@+id/my_Buy"
+                    android:layout_width="match_parent"
+                    android:layout_height="76pt"
+                    android:layout_marginTop="17pt"
+                    app:sBackgroundDrawableRes="@color/white"
+                    app:sDividerLineColor="#eee"
+                    app:sDividerLineHeight="1dp"
+                    app:sDividerLineType="bottom"
+                    app:sLeftTextString="已购"
+                    app:sRightIconRes="@drawable/icon_expand"
+                    app:sRightViewMarginRight="0dp"
+                    stv:sLeftTextColor="@android:color/black"
+                    stv:sLeftTextSize="18sp" />
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/my_buy_expandableLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    app:el_duration="300"
+                    app:el_expanded="true">
+
+                    <TextView
+                        android:visibility="gone"
+                        android:id="@+id/noBuyDataView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="16pt"
+                        android:drawableTop="@drawable/no_data"
+                        android:drawablePadding="6pt"
+                        android:gravity="center"
+                        android:text="暂无数据" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/myBuyRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</LinearLayout>

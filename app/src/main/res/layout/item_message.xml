@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="150pt"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16pt"
+            android:src="@drawable/meet_notify" />
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17pt"
+            android:layout_marginTop="25pt"
+            android:layout_toRightOf="@+id/image"
+            tools:text="会议通知"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_marginRight="200pt"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textTitle"
+            android:layout_alignLeft="@+id/textTitle"
+            android:layout_marginTop="14pt"
+            tools:text="某某会议开始了, 赶快参与吧某某会议开始了, 赶快参与吧某某会议开始了, 赶快参与吧某某会议开始了, 赶快参与吧某某会议开始了, 赶快参与吧某某会议开始了, 赶快参与吧某某会议开始了, 赶快参与吧"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="22pt"
+            tools:text="2020/03/19"
+            android:textSize="16sp" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_alignParentBottom="true"
+            android:background="#ccc"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+    </RelativeLayout>
+</RelativeLayout>

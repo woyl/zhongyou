@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_base_title_tool_bar" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/MicrophoneState"
+        android:layout_width="match_parent"
+        android:layout_height="128pt"
+        android:layout_marginTop="16pt"
+        app:sBackgroundDrawableRes="@color/white"
+        app:sDividerLineColor="#ccc"
+        app:sDividerLineType="bottom"
+        app:sLeftTextColor="@android:color/black"
+        app:sLeftTextSize="15sp"
+        app:sLeftTextString="麦克风开关"
+        app:sRightCheckBoxRes="@color/agora_blue"
+        app:sRightViewType="switchBtn"
+        app:sSwitchIsChecked="true"
+        app:sThumbResource="@drawable/thumb"
+        app:sTrackResource="@drawable/track" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/cameraState"
+        android:layout_width="match_parent"
+        android:layout_height="128pt"
+        app:sBackgroundDrawableRes="@color/white"
+        app:sLeftTextColor="@android:color/black"
+        app:sLeftTextSize="15sp"
+        app:sLeftTextString="摄像头开关"
+        app:sRightCheckBoxRes="@color/agora_blue"
+        app:sRightViewType="switchBtn"
+        app:sSwitchIsChecked="true"
+        app:sThumbResource="@drawable/thumb"
+        app:sTrackResource="@drawable/track" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/beautifulState"
+        android:layout_width="match_parent"
+        android:layout_height="128pt"
+        app:sBackgroundDrawableRes="@color/white"
+        app:sLeftTextColor="@android:color/black"
+        app:sLeftTextSize="15sp"
+        app:sLeftTextString="美颜开关"
+        app:sRightCheckBoxRes="@color/agora_blue"
+        app:sRightViewType="switchBtn"
+        app:sSwitchIsChecked="true"
+        app:sThumbResource="@drawable/thumb"
+        app:sTrackResource="@drawable/track" />
+
+
+
+</LinearLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+   >
+
+    <LinearLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/dp13"
+        android:background="@color/color_4095e8">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="@dimen/dp4"
+            android:layout_marginRight="@dimen/dp4"
+            android:gravity="center_vertical"
+            android:background="@drawable/button_home_search"
+            android:layout_height="@dimen/dp35">
+            <ImageView
+                android:layout_width="@dimen/dp18"
+                android:src="@drawable/fdj"
+                android:layout_marginLeft="@dimen/dp17"
+                android:layout_height="@dimen/dp18" />
+            <TextView
+                android:gravity="center_vertical"
+                android:id="@+id/input_keyword"
+                android:layout_width="0dp"
+                android:background="@color/color_347bbf"
+                android:layout_marginRight="@dimen/dp15"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:paddingLeft="@dimen/dp7"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/sp17"
+                android:layout_height="@dimen/dp44"
+                android:singleLine="true"
+                android:hint="请输入教室名称"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/swipeRefreshLayout_forum"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/cordinatorLayout_forum"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="visible"
+                android:id="@+id/recyclerView_forum"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="@color/white"
+                android:cacheColorHint="@null"
+                android:scrollbars="none"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appBarLayout_forum" />
+
+            <TextView
+                android:id="@+id/tv_forum_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:drawableTop="@drawable/c"
+                android:drawablePadding="8dp"
+                android:gravity="center_horizontal"
+                android:text="暂时没有安排"
+                android:textColor="@color/c_909090"
+                android:textSize="15sp"
+                android:visibility="gone" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</LinearLayout>

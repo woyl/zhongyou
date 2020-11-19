@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <View
+        android:id="@+id/view_1"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tv_point"
+        app:layout_constraintStart_toStartOf="@+id/tv_point"
+        app:layout_constraintEnd_toEndOf="@+id/tv_point"
+        android:background="@color/ce1e4e9"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_point"
+        android:layout_width="@dimen/dp10"
+        android:layout_height="@dimen/dp10"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/recommendDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/recommendAudio"
+        android:background="@drawable/point_ovel_blue"/>
+
+    <View
+        android:id="@+id/view_2"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_point"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/recommendAudio"
+        android:background="@color/ce1e4e9"/>
+
+    <TextView
+        android:id="@+id/recommendDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tv_point"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="2020年03月"
+        android:paddingTop="@dimen/dp20"
+        android:paddingBottom="@dimen/dp20"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/color_333333"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_play_m_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/dp11"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@+id/recommendDate"
+        app:layout_constraintBottom_toBottomOf="@+id/recommendDate"
+        android:background="@mipmap/pause_m"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/recommendAudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/recommendDate"
+        android:layout_marginStart="@dimen/dp27"
+        android:layout_marginEnd="@dimen/dp10"
+        android:background="@drawable/maker_course_item_five_bg"
+        android:paddingBottom="30pt">
+
+        <TextView
+            android:id="@+id/className"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/fl_aniu"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp21"
+            tools:text="提高课程音频日更新"
+            android:textColor="@android:color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/teacherName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp13"
+            app:layout_constraintTop_toBottomOf="@+id/className"
+            app:layout_constraintStart_toEndOf="@+id/classDate"
+            android:textColor="@color/color_999999"
+            android:textSize="12sp"
+            tools:text="主讲人：王某某" />
+
+        <TextView
+            android:id="@+id/classTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="00:00/01:20"
+            android:textSize="16sp"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints" />
+
+
+        <TextView
+            android:id="@+id/classDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/className"
+            android:layout_marginTop="@dimen/dp13"
+            app:layout_constraintStart_toStartOf="@+id/className"
+            android:textColor="@color/color_999999"
+            tools:text="3月29日"
+            android:textSize="12sp" />
+
+
+        <FrameLayout
+            android:id="@+id/fl_aniu"
+            android:layout_width="@dimen/dp33"
+            android:layout_height="@dimen/dp33"
+            android:layout_marginEnd="@dimen/dp11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/className"
+            app:layout_constraintStart_toEndOf="@+id/className"
+            app:layout_constraintBottom_toBottomOf="@+id/classDate">
+
+            <com.zhongyou.meet.mobile.view.CompletedProgressView
+                android:id="@+id/circle_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:circleColor="@color/transparent"
+                app:radius="@dimen/dp13"
+                android:layout_gravity="center"
+                app:ringBgColor="@color/cbfcdde"
+                app:ringColor="@color/c3a8ae6"
+                app:strokeWidth="@dimen/dp2"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_play_button"
+                android:layout_gravity="center"
+                android:layout_width="@dimen/dp15"
+                android:layout_height="@dimen/dp15"
+                android:src="@mipmap/pause_music"/>
+
+
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/audioState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@+id/className"
+            app:layout_constraintBottom_toBottomOf="@+id/classDate"
+            android:layout_marginEnd="@dimen/dp7"
+            android:scaleType="center"
+            android:src="@mipmap/reycler_play" />
+
+        <com.xw.repo.BubbleSeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/classDate"
+            android:layout_alignStart="@+id/teacherName"
+            android:layout_alignEnd="@+id/audioState"
+            android:visibility="gone"
+            android:layout_marginTop="5pt"
+            app:bsb_hide_bubble="true"
+            app:bsb_progress="0"
+            app:bsb_second_track_color="@color/agora_blue"
+            app:bsb_track_color="#A9A6A6"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/descriptionImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/seekBar"
+            android:layout_alignStart="@+id/teacherName"
+            android:layout_alignEnd="@+id/classDate"
+            android:layout_marginTop="26pt"
+            android:maxHeight="200pt"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

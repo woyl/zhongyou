@@ -1,0 +1,265 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:listDivider">@drawable/divider_bg</item>
+        <item name="android:windowBackground">@color/cf8f8f8</item>
+
+    </style>
+    <!--<item name="android:listDivider">@drawable/divider_bg</item>-->
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+
+    <style name="NoTitle" parent="AppTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+
+    </style>
+    <style name="NoTitleLandscape" parent="AppTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:screenOrientation">landscape</item>
+    </style>
+
+    <style name="translucentTheme"  parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:screenOrientation">landscape</item>
+    </style>
+
+    <style name="NotificationUIText">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowColor">@color/transparent_75_white</item>
+    </style>
+
+    <style name="MyDialog" parent="@android:style/Theme.Dialog">
+        <!--背景颜色及和透明程度-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--是否去除标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!--是否去除边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否模糊-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+    </style>
+
+    <!-- 自定义loading dialog -->
+    <style name="loading_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="CustomDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@drawable/bg_dialog</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+    <style name="HomeTab">
+        <item name="android:textColor">@drawable/home_tab_text_selector</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">@dimen/my_sp_36</item>
+    </style>
+
+    <style name="WhiteEdittext">
+        <item name="android:textSize">@dimen/my_px_43</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/purple_B07EDA</item>
+    </style>
+
+    <style name="MeetingTypeUnFocus">
+        <item name="android:textColor">@color/meeting_type_unfocus</item>
+        <item name="android:textSize">@dimen/my_sp_54</item>
+    </style>
+
+    <style name="MeetingTypeFocus">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/my_sp_62</item>
+    </style>
+
+    <style name="progress_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@null</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="actionMenuTextColor">@color/white</item> <!--  敲定颜色-->
+        <item name="android:textSize">@dimen/sp13</item> <!--  搞掂字体大小-->
+    </style>
+
+    <style name="RadingStyle" parent="@android:style/Widget.RatingBar">
+        <!-- 定义星星图片 -->
+        <item name="android:progressDrawable">@drawable/appraise_rating_bar</item>
+    </style>
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>  //Dialog的windowFrame框为无
+        <item name="android:windowIsFloating">true</item>  //是否浮现在activity之上
+        <item name="android:windowIsTranslucent">true</item> //是否半透明
+        <item name="android:windowNoTitle">true</item>  //是否显示title
+        <item name="android:background">@android:color/transparent</item>  //设置dialog的背景
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimAmount">0.5</item>  //就是用来控制灰度的值，当为1时，界面除了我们的dialog内容是高亮显示的，dialog以外的区域是黑色的，完全看不到其他内容，系统的默认值是0.5
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+
+    <style name="imageDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>  //Dialog的windowFrame框为无
+        <item name="android:windowIsFloating">true</item>  //是否浮现在activity之上
+        <item name="android:windowNoTitle">true</item>  //是否显示title
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="bottom_dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="dialog_style" parent="android:Animation">
+        <item name="@android:windowEnterAnimation">@anim/dialog_enter</item>
+        <item name="@android:windowExitAnimation">@anim/dialog_exit</item>
+    </style>
+
+    <style name="Dialog.FullScreen" parent="Theme.AppCompat.Dialog">
+        <item name="android:padding">0dp</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <declare-styleable name="ProgressWheel">
+        <attr name="matProg_progressIndeterminate" format="boolean" />
+        <attr name="matProg_barColor" format="color" />
+        <attr name="matProg_rimColor" format="color" />
+        <attr name="matProg_rimWidth" format="dimension" />
+        <attr name="matProg_spinSpeed" format="float" />
+        <attr name="matProg_barSpinCycleTime" format="integer" />
+        <attr name="matProg_circleRadius" format="dimension" />
+        <attr name="matProg_fillRadius" format="boolean" />
+        <attr name="matProg_barWidth" format="dimension" />
+        <attr name="matProg_linearProgress" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SwipeMenuLayout">
+        <attr name="swipeEnable" format="boolean"/>
+        <attr name="ios" format="boolean"/>
+        <attr name="leftSwipe" format="boolean"/>
+    </declare-styleable>
+
+    <style name="SignRadingStyle" parent="@android:style/Widget.RatingBar">
+        <!-- 定义星星图片 -->
+        <item name="android:progressDrawable">@drawable/sign_appraise_rating_bar</item>
+        <item name="android:minHeight">20dp</item>
+        <item name="android:maxHeight">20dp</item>
+
+    </style>
+
+    <style name="NyMatisse.Dracula" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@color/dracula_primary_dark</item>
+        <item name="toolbar">@style/Toolbar.Zhihu</item>
+        <item name="album.dropdown.title.color">@android:color/black</item>
+        <item name="album.dropdown.count.color">@android:color/black</item>
+        <item name="album.element.color">@android:color/black</item>
+        <item name="album.thumbnail.placeholder">@color/dracula_album_dropdown_thumbnail_placeholder</item>
+        <item name="album.emptyView">@drawable/ic_empty_dracula</item>
+        <item name="album.emptyView.textColor">@color/dracula_album_empty_view</item>
+        <item name="item.placeholder">@color/dracula_item_placeholder</item>
+        <item name="item.checkCircle.backgroundColor">@color/dracula_item_checkCircle_backgroundColor</item>
+        <item name="item.checkCircle.borderColor">@color/dracula_item_checkCircle_borderColor</item>
+        <item name="page.bg">@color/dracula_page_bg</item>
+        <item name="bottomToolbar.bg">@color/dracula_bottom_toolbar_bg</item>
+        <item name="bottomToolbar.preview.textColor">@color/dracula_bottom_toolbar_preview</item>
+        <item name="bottomToolbar.apply.textColor">@color/dracula_bottom_toolbar_apply</item>
+        <item name="preview.bottomToolbar.back.textColor">@color/dracula_preview_bottom_toolbar_back_text</item>
+        <item name="preview.bottomToolbar.apply.textColor">@color/dracula_preview_bottom_toolbar_apply</item>
+        <item name="android:listPopupWindowStyle">@style/Popup.Dracula</item>
+        <item name="listPopupWindowStyle">@style/Popup.Dracula</item>
+        <item name="capture.textColor">@color/dracula_capture</item>
+    </style>
+
+    <style name="MyMatisse.Zhihu" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@android:color/black</item>
+        <item name="toolbar">@style/MyToolbar.Zhihu</item>
+        <item name="album.dropdown.title.color">@color/black</item>
+        <item name="album.dropdown.count.color">@color/black</item>
+        <item name="album.element.color">@color/black</item>
+        <item name="album.thumbnail.placeholder">@color/zhihu_album_dropdown_thumbnail_placeholder</item>
+        <item name="album.emptyView">@drawable/ic_empty_zhihu</item>
+        <item name="album.emptyView.textColor">@color/zhihu_album_empty_view</item>
+        <item name="item.placeholder">@color/zhihu_item_placeholder</item>
+        <item name="item.checkCircle.backgroundColor">@color/zhihu_item_checkCircle_backgroundColor</item>
+        <item name="item.checkCircle.borderColor">@color/zhihu_item_checkCircle_borderColor</item>
+        <item name="page.bg">@color/zhihu_page_bg</item>
+        <item name="bottomToolbar.bg">@color/zhihu_bottom_toolbar_bg</item>
+        <item name="bottomToolbar.preview.textColor">@color/zhihu_bottom_toolbar_preview</item>
+        <item name="bottomToolbar.apply.textColor">@color/zhihu_bottom_toolbar_apply</item>
+        <item name="preview.bottomToolbar.back.textColor">@color/zhihu_preview_bottom_toolbar_back_text</item>
+        <item name="preview.bottomToolbar.apply.textColor">@color/zhihu_preview_bottom_toolbar_apply</item>
+        <item name="listPopupWindowStyle">@style/Popup.Zhihu</item>
+        <item name="capture.textColor">@color/zhihu_capture</item>
+    </style>
+    <style name="MyToolbar.Zhihu" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="background">@color/white</item>
+    </style>
+
+    <!--tablayout 字体设置-->
+    <style name="TabLayoutBoldTextSize" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/c3a8ae6</item>
+    </style>
+
+    <style name="TabLayoutNormalTextSize" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/color_333333</item>
+    </style>
+
+    <style name="TabLayoutStyle">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

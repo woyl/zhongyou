@@ -1,0 +1,118 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: "config.gradle"
+
+buildscript {
+    ext.kotlin_version = "1.4.10"
+    ext.anko_version = '0.10.8'
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url "https://dl.bintray.com/rongcloud/maven" }
+        maven { url "https://jitpack.io" }
+        maven { url "http://mvn.gt.getui.com/nexus/content/repositories/releases/"}
+        maven {url 'http://developer.huawei.com/repo/'}
+        maven { url 'https://maven.google.com' }
+        google()
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.huawei.agconnect:agcp:1.2.1.301'
+        classpath 'com.android.tools.build:gradle:4.0.1'
+        classpath "com.tencent.bugly:tinker-support:1.0.9"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        maven {url " https://oss.sonatype.org/content/repositories/snapshots/"}
+        maven { url " https://jcenter.bintray.com"}
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url "https://dl.bintray.com/rongcloud/maven" }
+        maven { url "https://jitpack.io" }
+        maven { url "http://mvn.gt.getui.com/nexus/content/repositories/releases/"}
+        maven {url 'http://developer.huawei.com/repo/'}
+        maven { url 'https://maven.google.com' }
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+def supportVersion = "27.1.1"
+project.ext {
+    compileSdkVersion = 28
+    buildToolsVersion = "28.0.3"
+
+    applicationId = "com.hitomi.transferimage"
+    minSdkVersion = 14
+    targetSdkVersion = 28
+    versionCode = 1
+    versionName = "1.0.0"
+
+    abortOnLintError = false
+    checkLintRelease = false
+    useJack = false
+    abortOnLintError = false
+    javaVersion = JavaVersion.VERSION_1_8
+
+    // 第三方库版本管理
+    libSupportV4 = "com.android.support:support-v4:${supportVersion}"
+    libSupportV7 = "com.android.support:appcompat-v7:${supportVersion}"
+    libSupportAppcompat = "com.android.support:appcompat-v7:${supportVersion}"
+    libSupportDesign = "com.android.support:design:${supportVersion}"
+
+
+    //library版本
+    jjdxm_minSdkVersion = 9
+    jjdxm_versionCode = 1
+    jjdxm_versionName = "1.0.0"
+    jjdxm_v4 = "com.android.support:support-v4:${supportVersion}"
+    jjdxm_v7 = "com.android.support:appcompat-v7:${supportVersion}"
+}
+
+//这个block 表示为每个子module进行相关配置。
+subprojects() {
+
+    // 这里获取到assembleRelease和assembleDebug的task任务
+    //注意这里使用tasks.getByName("assembleRelease")会报错，找不到这个task
+    def releaseTasks = project.getTasksByName("assembleRelease", false)
+    def debugTasks = project.getTasksByName("assembleDebug", false)
+    copyApkFile(releaseTasks, project)
+    copyApkFile(debugTasks, project)
+}
+
+def copyApkFile(Set<Task> tasks, Project project) {
+    for (task in tasks) {
+        def dir = project.getProjectDir().getAbsolutePath()
+        println "assemble release dir = $dir"
+        def file = new File(dir + "/build/outputs/apk")
+
+        //在生成此apk之前，先将之前生成的apk删除
+        if (file.exists()) {
+            def var = delete(dir + "/build/outputs/apk")
+            def var1 = delete(rootProject.getRootDir().getAbsolutePath() + "/apk/")
+            println "clear before create $var , $var1------------------"
+        }
+
+        task.doLast {
+            if (file.exists()) {
+                //将生成的apk拷贝出来
+                copy { //copy是gradle中的project提供的方法，用于拷贝，里面有两个特定的属性
+                    //from srcDir ， into desDir （当这个目录不存在的时候会尝试创建这个文件夹）
+                    println "copy file -------------------"
+                    from dir + "/build/outputs/apk"
+                    into rootProject.getRootDir().getAbsolutePath() + "/apk/"
+                    exclude("**/*.json",)
+                }
+            }
+        }
+    }
+}
+

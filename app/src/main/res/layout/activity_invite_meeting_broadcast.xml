@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/broadcaster_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#6e6e6e" />
+
+            <ImageView
+                android:id="@+id/doc_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible" />
+        </FrameLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/audience_list"
+            android:layout_width="@dimen/my_px_600"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/my_px_120"
+            android:layout_marginRight="32dp"
+            android:layout_marginBottom="@dimen/my_px_200" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_buttom_meeting"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp">
+
+        <ImageButton
+            android:visibility="gone"
+            android:id="@+id/full_screen"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_meeting_mute_selector"
+            android:src="@drawable/ic_full_screen" />
+
+        <TextView
+            android:id="@+id/spliteView"
+            android:layout_width="110sp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/bg_meeting_button_selector"
+            android:drawableStart="@drawable/ic_full_screen"
+            android:drawableLeft="@drawable/ic_full_screen"
+            android:drawablePadding="-15dp"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:text="均分模式"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:id="@+id/doc_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="8dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <Button
+                android:id="@+id/preview"
+                android:layout_width="70sp"
+                android:layout_height="30sp"
+                android:background="@drawable/bg_meeting_button_selector"
+                android:shadowColor="@color/black"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="5"
+                android:text="上一页"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/next"
+                android:layout_width="70sp"
+                android:layout_height="30sp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/bg_meeting_button_selector"
+                android:shadowColor="@color/black"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="5"
+                android:text="下一页"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/exit_ppt"
+                android:layout_width="110sp"
+                android:layout_height="30sp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/bg_meeting_button_selector"
+                android:shadowColor="@color/black"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="5"
+                android:text="退出PPT演示"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/camera_switch"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/bg_meeting_mute_selector"
+            android:src="@drawable/ic_switch_camera" />
+
+        <ImageButton
+            android:id="@+id/mute_audio"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/bg_meeting_mute_selector"
+            android:src="@drawable/ic_unmuted" />
+
+        <Button
+            android:id="@+id/meeting_doc"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/bg_meeting_button_selector"
+            android:drawableLeft="@drawable/ic_meeting_doc"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:text="资料"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+
+
+        <Button
+            android:id="@+id/waiter"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_gravity="bottom"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/bg_meeting_button_selector"
+            android:drawableLeft="@drawable/ic_meeting_signup"
+            android:drawablePadding="3dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="参会人（0）"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/stop_audience"
+            android:layout_width="104dp"
+            android:layout_height="35dp"
+            android:layout_gravity="bottom"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/bg_meeting_button_selector"
+            android:drawableLeft="@drawable/ic_meeting_end_speech"
+            android:drawablePadding="3dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="终止发言"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+
+        <Button
+            android:id="@+id/finish_meeting"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/bg_meeting_button_selector"
+            android:drawableLeft="@drawable/ic_meeting_close"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:text="结束"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="14dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_back"
+            android:drawablePadding="6dp"
+            android:shadowColor="@color/black"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="5"
+            android:text="退出"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shadowColor="@color/black"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="5"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="gone"
+            tools:text="第1/20页"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/broadcaster_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="14dp"
+        android:shadowColor="@color/black"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="5"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        tools:text="主持人：李咏" />
+
+
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/chairManSmallVideoLayoutContainer"
+        android:layout_gravity="right|bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|top"
+            android:background="@color/c_ff8600"
+            android:padding="1dp"
+            android:text="主持人"
+            android:textColor="@color/white"
+            android:textSize="8sp" />
+
+        <FrameLayout
+            android:id="@+id/chairManSmallVideoLayout"
+            android:layout_width="@dimen/my_px_500"
+            android:layout_height="@dimen/my_px_300"
+            android:layout_gravity="right|bottom" />
+
+    </FrameLayout>
+</FrameLayout>

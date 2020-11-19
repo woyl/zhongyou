@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <include layout="@layout/meeting_fragment_head" />
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tl:tabIndicatorColor="@null"
+        tl:tabSelectedTextColor="@color/c3a8ae6"
+        tl:tabMode="scrollable"
+        tl:tabTextColor="@color/color_666666"
+        android:background="@color/white"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_page2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+<!--    <com.scwang.smartrefresh.layout.SmartRefreshLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+<!--        <androidx.appcompat.widget.LinearLayoutCompat-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical">-->
+<!--            <com.google.android.material.tabs.TabLayout-->
+<!--                android:id="@+id/tabLayout"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
+
+<!--            <androidx.viewpager2.widget.ViewPager2-->
+<!--                android:id="@+id/view_page2"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"/>-->
+<!--        </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+<!--    </LinearLayout>-->
+
+    <TextView
+        android:id="@+id/tv_fails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="加载失败？点我"/>
+
+</LinearLayout>

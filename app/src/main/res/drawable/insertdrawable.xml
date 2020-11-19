@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/chat_input_bg"
+    android:insetLeft="0dp"
+    android:insetRight="0dp"
+    android:insetTop="@dimen/my_px_10"
+    android:insetBottom="@dimen/my_px_10">
+</inset>

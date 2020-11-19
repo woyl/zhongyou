@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_focused="true">
+        <!-- 定义当button获得focus时的形态-->
+        <shape>
+            <gradient android:startColor="#D81B60" android:endColor="#D81B60" />
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+
+    <item android:drawable="@color/black"/>
+
+</selector>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_gradient_vertical_color"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/my_px_592"
+            android:layout_height="@dimen/my_px_577"
+            android:layout_marginTop="70dp"
+            android:src="@drawable/ic_login_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edt_phone_number"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/my_px_156"
+            android:layout_marginStart="@dimen/my_px_130"
+            android:layout_marginLeft="@dimen/my_px_130"
+            android:layout_marginTop="@dimen/my_px_247"
+            android:layout_marginEnd="@dimen/my_px_130"
+            android:layout_marginRight="@dimen/my_px_130"
+            android:hint="请输入手机号"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:paddingLeft="@dimen/my_px_92"
+            android:paddingTop="@dimen/my_px_32"
+            android:paddingBottom="@dimen/my_px_32"
+            android:textColor="@color/white"
+            android:theme="@style/WhiteEdittext"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <ImageView
+            android:layout_width="@dimen/my_px_35"
+            android:layout_height="@dimen/my_px_43"
+            android:layout_marginStart="@dimen/my_px_18"
+            android:layout_marginLeft="@dimen/my_px_18"
+            android:layout_marginTop="@dimen/my_px_42"
+            android:layout_marginBottom="@dimen/my_px_42"
+            android:src="@drawable/uinfo_mobile"
+            app:layout_constraintBottom_toBottomOf="@+id/edt_phone_number"
+            app:layout_constraintStart_toStartOf="@+id/edt_phone_number"
+            app:layout_constraintTop_toTopOf="@+id/edt_phone_number" />
+
+        <EditText
+            android:id="@+id/edt_phone_verification_code"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/my_px_156"
+            android:layout_marginTop="0dp"
+            android:hint="请输入验证码"
+            android:inputType="number"
+            android:maxLength="4"
+            android:paddingLeft="@dimen/my_px_92"
+            android:paddingTop="@dimen/my_px_32"
+            android:paddingBottom="@dimen/my_px_32"
+            android:textColor="@color/white"
+            android:theme="@style/WhiteEdittext"
+            app:layout_constraintEnd_toEndOf="@+id/edt_phone_number"
+            app:layout_constraintStart_toStartOf="@+id/edt_phone_number"
+            app:layout_constraintTop_toBottomOf="@+id/edt_phone_number" />
+
+        <Button
+            android:id="@+id/btn_phone_request_verification_code"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/my_px_60"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/btn_verification_fillet_bg_selector"
+            android:paddingLeft="@dimen/my_px_19"
+            android:paddingRight="@dimen/my_px_19"
+            android:text="获取验证码"
+            android:textColor="@color/white"
+            android:textSize="@dimen/my_sp_35"
+            app:layout_constraintBottom_toBottomOf="@+id/edt_phone_verification_code"
+            app:layout_constraintEnd_toEndOf="@+id/edt_phone_verification_code"
+            app:layout_constraintTop_toBottomOf="@+id/edt_phone_number"
+            app:layout_constraintVertical_bias="0.51" />
+
+        <Button
+            android:id="@+id/btn_phone_login"
+            android:layout_width="@dimen/my_px_648"
+            android:layout_height="@dimen/my_px_115"
+            android:layout_marginStart="@dimen/my_px_216"
+            android:layout_marginLeft="@dimen/my_px_216"
+            android:layout_marginEnd="@dimen/my_px_216"
+            android:layout_marginRight="@dimen/my_px_216"
+            android:layout_marginBottom="@dimen/my_px_43"
+            android:background="@drawable/btn_phone_login_bg_selector"
+            android:text="绑定"
+            android:textColor="@color/purple_B07EDA"
+            android:textSize="@dimen/my_sp_43"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dp10"
+    android:layout_marginEnd="@dimen/dp10"
+    android:layout_marginTop="@dimen/dp8"
+    android:layout_marginBottom="@dimen/dp8"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.zhongyou.meet.mobile.view.BGABannerView
+        android:id="@+id/banner_guide_content"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp160"
+        app:banner_indicatorGravity="center_horizontal"
+        app:banner_numberIndicatorTextSize="18sp"
+        app:banner_pageChangeDuration="800"
+        app:banner_pointAutoPlayAble="true"
+        app:banner_pointAutoPlayInterval="5000"
+        app:banner_pointContainerBackground="#00000000"
+        app:banner_pointContainerLeftRightPadding="24pt"
+        app:banner_pointDrawable="@drawable/bga_banner_selector_point_hollow"
+        app:banner_pointLeftRightMargin="10pt"
+        app:banner_pointTopBottomMargin="18pt"
+        app:banner_tipTextSize="16sp"
+        android:scaleType="fitXY"
+        app:banner_transitionEffect="alpha" />
+
+
+</LinearLayout>

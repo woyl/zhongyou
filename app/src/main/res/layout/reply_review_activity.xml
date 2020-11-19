@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/mLayoutTitle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_px_160"
+            android:background="@color/purple_811fcd">
+
+            <ImageView
+                android:id="@+id/mIvLeft"
+                style="@style/Widget.AppCompat.ActionButton"
+                android:layout_width="@dimen/my_px_200"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:scaleType="center"
+                android:src="@drawable/select_back_btn"
+                android:text="保存"
+                android:textColor="@color/white"
+                android:textSize="@dimen/my_sp_48" />
+
+            <TextView
+                android:id="@+id/mTvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="回复"
+                android:textColor="@color/white"
+                android:textSize="@dimen/my_sp_48" />
+
+            <com.zhongyou.meet.mobile.view.PressedTextView
+                android:id="@+id/mTvRight"
+                android:layout_width="@dimen/my_px_200"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@color/purple_811fcd"
+                android:gravity="center"
+                android:text="提交"
+                android:textColor="@color/white"
+                android:textSize="@dimen/my_sp_48" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/line_gray_d8d8d8">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/my_px_40"
+                    android:layout_marginRight="@dimen/my_px_40"
+                    android:layout_marginTop="@dimen/my_px_40"
+                    android:gravity="center_vertical"
+
+                    android:orientation="horizontal">
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/mIvHead"
+                        android:layout_width="@dimen/my_px_100"
+                        android:layout_height="@dimen/my_px_100"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/baby_default_avatar"
+
+                        />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/my_px_20"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/mTvName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="北京万达店 唐大山"
+                            android:textColor="@color/purple_811fcd"
+                            android:textSize="@dimen/my_sp_42" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/mTvName"
+                            android:layout_marginTop="@dimen/my_px_20"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/mTvTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text_gray_909090"
+                                android:textSize="@dimen/my_sp_36"
+                                tools:text="今天 22:00" />
+
+
+                            <TextView
+                                android:id="@+id/mTvCallDuration"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/my_px_20"
+                                android:background="@drawable/review_grey_round_bg_shape"
+                                android:drawableLeft="@mipmap/ic_call_time"
+                                android:drawablePadding="@dimen/my_px_5"
+                                android:gravity="right"
+                                android:paddingBottom="@dimen/my_px_5"
+                                android:paddingLeft="@dimen/my_px_10"
+                                android:paddingRight="@dimen/my_px_10"
+                                android:paddingTop="@dimen/my_px_5"
+                                android:singleLine="true"
+                                android:textColor="@color/text_gray_909090"
+                                android:textSize="@dimen/my_sp_30"
+                                tools:text="000:32" />
+
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/mLayoutStar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/my_px_20"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/mIvStar1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/ic_star_good_record" />
+
+                        <ImageView
+                            android:id="@+id/mIvStar2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/my_px_5"
+                            android:src="@mipmap/ic_star_good_record" />
+
+                        <ImageView
+                            android:id="@+id/mIvStar3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/my_px_5"
+                            android:src="@mipmap/ic_star_good_record" />
+
+                        <ImageView
+                            android:id="@+id/mIvStar4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/my_px_5"
+                            android:src="@mipmap/ic_star_good_record" />
+
+                        <ImageView
+                            android:id="@+id/mIvStar5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/my_px_5"
+                            android:src="@mipmap/ic_star_good_record" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/mTvReviewContent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/my_px_40"
+                    android:layout_marginRight="@dimen/my_px_40"
+                    android:layout_marginTop="@dimen/my_px_40"
+                    android:textColor="@color/text_black_434343"
+                    android:textSize="@dimen/my_sp_42"
+                    tools:text="讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/my_px_40"
+                    android:layout_marginTop="@dimen/my_px_30"
+                    android:background="@color/line_gray_d8d8d8" />
+
+                <EditText
+                    android:id="@+id/mEtReplyContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="left|top"
+                    android:hint="请输入回复内容~"
+                    android:inputType="textMultiLine"
+                    tools:text="讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好讲得特别好"
+                    android:minLines="5"
+                    android:padding="@dimen/my_px_40"
+                    android:textColorHint="@color/text_gray_d8d8d8" />
+
+                <TextView
+                    android:id="@+id/mTvTextNum"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/my_px_80"
+                    android:layout_gravity="right"
+                    android:background="@color/white"
+                    android:gravity="right"
+                    android:minLines="3"
+                    android:paddingRight="@dimen/my_px_40"
+                    android:text="0/1000"
+                    android:textSize="@dimen/my_sp_36" />
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</layout>

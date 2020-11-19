@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:stv="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/meeting_fragment_head" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/mSwipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srlEnableLoadMore="false"
+        app:srlEnableRefresh="true">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/id_coordinatorlayout_appbar_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                app:elevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
+
+                    <cn.bingoogolapple.bgabanner.BGABanner
+                        android:id="@+id/banner_guide_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="300pt"
+                        app:banner_indicatorGravity="right"
+                        app:banner_numberIndicatorTextSize="18sp"
+                        app:banner_pageChangeDuration="800"
+                        app:banner_pointAutoPlayAble="true"
+                        app:banner_pointAutoPlayInterval="5000"
+                        app:banner_pointContainerBackground="#88aaaaaa"
+                        app:banner_pointContainerLeftRightPadding="24pt"
+                        app:banner_pointDrawable="@drawable/bga_banner_selector_point_hollow"
+                        app:banner_pointLeftRightMargin="10pt"
+                        app:banner_pointTopBottomMargin="18pt"
+                        app:banner_tipTextSize="16sp"
+                        app:banner_transitionEffect="depth" />
+
+
+                    <RelativeLayout
+                        android:layout_marginTop="16pt"
+                        android:id="@+id/recommendAudioMore"
+                        android:layout_width="match_parent"
+                        android:layout_height="74pt"
+                        android:background="@color/white"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:paddingLeft="16pt"
+                            android:text="@string/sb_says"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/more"
+                            android:layout_width="16pt"
+                            android:layout_height="26pt"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="16pt"
+                            android:src="@drawable/more" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="8pt"
+                            android:layout_toLeftOf="@+id/more"
+                            android:text="更多"
+                            android:textColor="@color/agora_blue"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1pt"
+                            android:layout_alignParentBottom="true"
+                            android:background="#eee" />
+                    </RelativeLayout>
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/audioRecyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <com.flyco.tablayout.SlidingTabLayout
+                    android:id="@+id/tabLayout"
+                    android:layout_width="match_parent"
+                    android:minWidth="200dp"
+                    android:layout_height="85pt"
+                    android:layout_marginTop="16pt"
+                    android:background="@color/white"
+                    tl:tl_divider_padding="8dp"
+                    tl:tl_divider_width="1dp"
+                    tl:tl_indicator_color="@color/agora_blue"
+                    tl:tl_indicator_height="1.5dp"
+                    tl:tl_indicator_margin_left="15pt"
+                    tl:tl_indicator_margin_right="15pt"
+                    tl:tl_indicator_width_equal_title="true"
+                    tl:tl_tab_padding="10dp"
+                    tl:tl_tab_space_equal="false"
+                    tl:tl_textSelectColor="@color/agora_blue"
+                    tl:tl_textUnselectColor="@color/black"
+                    tl:tl_textsize="18sp"
+                    tl:tl_underline_color="@color/white"
+                    tl:tl_underline_height="1dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ProgressBar
+                        android:id="@+id/circularProgressBar"
+                        style="?android:attr/progressBarStyleLarge"
+                        android:layout_width="80pt"
+                        android:layout_height="80pt"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="120pt"
+                        android:visibility="gone" />
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </RelativeLayout>
+            </LinearLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</LinearLayout>

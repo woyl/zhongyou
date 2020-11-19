@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="90pt"
+    android:id="@+id/base_head"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/inputCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_add" />
+
+        <RelativeLayout
+            android:layout_alignRight="@+id/inputCode"
+            android:id="@+id/red_dotone"
+            android:layout_width="18pt"
+            android:layout_height="18pt"
+            android:layout_alignTop="@+id/inputCode"
+            android:background="@drawable/message_red_dot"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_search"
+        android:layout_width="558pt"
+        android:layout_height="64pt"
+        android:layout_marginStart="20pt"
+        android:background="@drawable/input_meeting_name"
+        android:gravity="center"
+        android:hint="@string/input_meeting_name"
+        android:textSize="12sp" />
+
+
+    <RelativeLayout
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/icon_notify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_notify" />
+
+        <RelativeLayout
+            android:layout_alignRight="@+id/icon_notify"
+            android:id="@+id/red_dot"
+            android:layout_width="18pt"
+            android:layout_height="18pt"
+            android:layout_alignTop="@+id/icon_notify"
+            android:background="@drawable/message_red_dot"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+</LinearLayout>

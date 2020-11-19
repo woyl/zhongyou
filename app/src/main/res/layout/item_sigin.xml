@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background"
+    android:layout_width="match_parent"
+    android:layout_height="260pt"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@mipmap/bg_meeting_item_a" />
+
+    <TextView
+        android:id="@+id/meeting_state"
+        android:layout_width="118pt"
+        android:layout_height="52pt"
+        android:background="@drawable/bg_meeting_state_new"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        tools:text="进行中" />
+
+
+    <LinearLayout
+        android:id="@+id/item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="88pt"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="80pt"
+            android:layout_height="1.5dp"
+            android:layout_marginRight="8pt"
+            android:background="@android:color/white" />
+
+        <TextView
+            android:id="@+id/begin_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="2017.11.17 14.30" />
+
+        <View
+            android:layout_width="80pt"
+            android:layout_height="1.5dp"
+            android:layout_marginLeft="8pt"
+            android:background="@android:color/white" />
+    </LinearLayout>
+
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_time"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="4pt"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="6dp"
+        android:layout_weight="1.0"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        tools:text="这是这个会议的标题这是这个会议的标题这是这个会议的标题这是这个会议的标题" />
+
+    <com.like.LikeButton
+        android:id="@+id/collectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/name"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="21pt"
+        android:layout_marginBottom="12pt"
+        android:minWidth="50pt"
+        android:minHeight="50pt"
+        app:anim_scale_factor="2"
+        app:circle_end_color="#F35C00"
+        app:circle_start_color="#F35C00"
+        app:dots_primary_color="#F35C00"
+        app:dots_secondary_color="#F35C00"
+        app:icon_size="15dp"
+        app:icon_type="Star"
+        app:is_enabled="true"
+        app:like_drawable="@drawable/icon_colect"
+        app:liked="false"
+        app:unlike_drawable="@drawable/icon_not_colet" />
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#55ffffff"
+        android:paddingLeft="16pt"
+        android:paddingTop="8pt"
+        android:paddingBottom="8pt"
+        android:text="1111"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+</RelativeLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_base_title_tool_bar" />
+
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/userHeader"
+        android:layout_width="match_parent"
+        android:layout_height="152pt"
+        app:sBackgroundDrawableRes="@color/white"
+        app:sBottomDividerLineMarginLR="@dimen/dp8"
+        app:sLeftTextColor="@color/color_333333"
+        app:sLeftTextString="头像"
+        app:sDividerLineColor="@color/white"
+        app:sRightIconHeight="98pt"
+        app:sRightIconRes="@drawable/tx"
+        app:sRightIconShowCircle="true"
+        app:sRightIconWidth="98pt" />
+
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/userNickName"
+        android:layout_width="match_parent"
+        android:layout_height="120pt"
+        android:layout_marginTop="@dimen/dp10"
+        app:sBottomDividerLineMarginLR="@dimen/dp8"
+        app:sBackgroundDrawableRes="@color/white"
+        app:sDividerLineColor="#ccc"
+        app:sDividerLineType="bottom"
+        app:sLeftTextString="姓名"
+        app:sRightIconRes="@mipmap/my_right"
+        app:sRightTextColor="@color/color_666666"
+        app:sLeftTextColor="@color/color_333333"
+        app:sRightTextSize="15sp"
+        app:sRightTextString="" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/userProfile"
+        android:layout_width="match_parent"
+        android:layout_height="120pt"
+        app:sBackgroundDrawableRes="@color/white"
+        app:sBottomDividerLineMarginLR="@dimen/dp8"
+        app:sDividerLineColor="#ccc"
+        app:sDividerLineType="bottom"
+        app:sLeftTextString="用户类型"
+        app:sLeftTextColor="@color/color_333333"
+        app:sRightIconRes="@mipmap/my_right"
+        app:sRightTextColor="@color/color_666666"
+        app:sRightTextSize="15sp"
+        app:sRightTextString="" />
+
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/userSchoolName"
+        android:layout_width="match_parent"
+        android:layout_height="120pt"
+        android:visibility="gone"
+        app:sBackgroundDrawableRes="@color/white"
+        app:sBottomDividerLineMarginLR="@dimen/dp8"
+        app:sDividerLineColor="#ccc"
+        app:sDividerLineType="bottom"
+        app:sLeftTextString="幼儿园名称"
+        app:sRightIconRes="@mipmap/my_right"
+        app:sRightTextColor="@color/color_666666"
+        app:sLeftTextColor="@color/color_333333"
+        app:sRightTextSize="15sp"
+        app:sRightTextString="请输入幼儿园名称" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/userLocation"
+        android:layout_width="match_parent"
+        android:layout_height="120pt"
+        app:sBackgroundDrawableRes="@color/white"
+        app:sBottomDividerLineMarginLR="@dimen/dp8"
+        app:sLeftTextString="地址"
+        app:sDividerLineColor="#ccc"
+        app:sRightIconRes="@mipmap/my_right"
+        app:sRightTextColor="@color/color_666666"
+        app:sLeftTextColor="@color/color_333333"
+        app:sRightTextSize="15sp"
+        app:sRightTextString="" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/phoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="120pt"
+        android:paddingRight="10pt"
+        android:visibility="visible"
+        app:sDividerLineColor="@color/white"
+        app:sBackgroundDrawableRes="@color/white"
+        app:sLeftTextSize="14sp"
+        app:sLeftTextString="手机号码"
+        app:sRightBottomTextColor="@color/black"
+        app:sRightTextColor="@color/color_666666"
+        app:sLeftTextColor="@color/color_333333"
+        app:sRightTextSize="15sp"
+        app:sRightTextString="111"
+        app:sSwitchIsChecked="true" />
+
+    <com.allen.library.SuperButton
+        android:id="@+id/save"
+        android:layout_width="match_parent"
+        android:layout_height="82pt"
+        android:layout_marginTop="@dimen/dp30"
+        android:layout_marginStart="@dimen/dp10"
+        android:layout_marginEnd="@dimen/dp10"
+        android:text="保存"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:sCornersRadius="5dp"
+        app:sSelectorNormalColor="@color/c3A8CE8"
+        app:sSelectorPressedColor="@color/c_172938"
+        app:sSolidColor="@color/c3A8CE8"
+        app:sUseSelector="true" />
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
